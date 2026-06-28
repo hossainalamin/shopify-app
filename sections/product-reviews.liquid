@@ -1,0 +1,792 @@
+{% comment %}
+  Product Reviews Section
+  Version: 1.1
+  Author: Your Name
+{% endcomment %}
+
+<section class="product-reviews" aria-label="Customer Reviews" id="{{ section.id }}">
+  <div class="container page-width">
+    <header class="reviews-header">
+      <h2 style="font-family: {{ section.settings.title_font.family }}; font-weight: {{ section.settings.title_font.weight }};">
+        {{ section.settings.title }}
+      </h2>
+      <p style="font-family: {{ section.settings.text_font.family }}; font-weight: {{ section.settings.text_font.weight }};">
+        {{ section.settings.subtitle }}
+      </p>
+    </header>
+
+    <div class="reviews-wrapper {% if section.settings.layout == 'grid' %}grid-layout{% else %}swiper reviews-swiper{% endif %}">
+      {% if section.settings.layout == 'grid' %}
+        {% for block in section.blocks %}
+          <article class="review-card" role="group" aria-label="Review by {{ block.settings.name }}">
+            <div class="review-rating" aria-label="{{ block.settings.rating }} out of 5 stars">
+              {% for i in (1..5) %}
+                <span class="star {% if i <= block.settings.rating %}filled{% else %}empty{% endif %}" aria-hidden="true">★</span>
+              {% endfor %}
+            </div>
+            <div class="review-text" style="font-family: {{ section.settings.text_font.family }}; font-weight: {{ section.settings.text_font.weight }};">
+              {{ block.settings.text }}
+            </div>
+            <footer class="review-footer">
+              {% if section.settings.show_avatar %}
+                {% if block.settings.avatar != blank %}
+                  <img src="{{ block.settings.avatar | image_url: width: 80, height: 80, crop: 'center' }}" 
+                       alt="Avatar of {{ block.settings.name }}" 
+                       width="40"
+                       height="40"
+                       loading="lazy" 
+                       class="review-avatar">
+                {% else %}
+                  <div class="review-avatar placeholder">
+                    {{ block.settings.name | slice: 0 | upcase }}
+                  </div>
+                {% endif %}
+              {% endif %}
+              <div class="review-author">
+                <span class="review-name">{{ block.settings.name }}</span>
+                {% if block.settings.location != blank %}
+                  <span class="review-location">{{ block.settings.location }}</span>
+                {% endif %}
+              </div>
+            </footer>
+          </article>
+        {% else %}
+          <article class="review-card empty-state">
+            <p>No reviews yet. Be the first to share your experience!</p>
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <article class="review-card" role="group" aria-label="Review by {{ block.settings.name }}">
+                <div class="review-rating" aria-label="{{ block.settings.rating }} out of 5 stars">
+                  {% for i in (1..5) %}
+                    <span class="star {% if i <= block.settings.rating %}filled{% else %}empty{% endif %}" aria-hidden="true">★</span>
+                  {% endfor %}
+                </div>
+                <div class="review-text" style="font-family: {{ section.settings.text_font.family }}; font-weight: {{ section.settings.text_font.weight }};">
+                  {{ block.settings.text }}
+                </div>
+                <footer class="review-footer">
+                  {% if section.settings.show_avatar %}
+                    {% if block.settings.avatar != blank %}
+                      <img src="{{ block.settings.avatar | image_url: width: 80, height: 80, crop: 'center' }}" 
+                           alt="Avatar of {{ block.settings.name }}" 
+                           width="40"
+                           height="40"
+                           loading="lazy" 
+                           class="review-avatar">
+                    {% else %}
+                      <div class="review-avatar placeholder">
+                        {{ block.settings.name | slice: 0 | upcase }}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                  <div class="review-author">
+                    <span class="review-name">{{ block.settings.name }}</span>
+                    {% if block.settings.location != blank %}
+                      <span class="review-location">{{ block.settings.location }}</span>
+                    {% endif %}
+                  </div>
+                </footer>
+              </article>
+            </div>
+          {% else %}
+            <div class="swiper-slide">
+              <article class="review-card empty-state">
+                <p>No reviews yet. Be the first to share your experience!</p>
+              </article>
+            </div>
+          {% endfor %}
+        </div>
+        {% if section.settings.show_arrows %}
+          <div class="swiper-button-prev" aria-label="Previous review"></div>
+          <div class="swiper-button-next" aria-label="Next review"></div>
+        {% endif %}
+        {% if section.settings.show_pagination %}
+          <div class="swiper-pagination"></div>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_button %}
+      <div class="reviews-cta">
+        <a href="{{ section.settings.button_link }}" class="button" aria-label="{{ section.settings.button_text }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.product-reviews {
+  padding: 80px 20px;
+  background: {{ section.settings.background_color }};
+  color: {{ section.settings.text_color }};
+  position: relative;
+}
+
+.product-reviews .container {
+  margin: 0 auto;
+  position: relative;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.reviews-header h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.reviews-header p {
+  color: {{ section.settings.subtitle_color }};
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.review-card {
+  background: {{ section.settings.card_background | default: '#fff' }};
+  border-radius: 16px;
+  padding: 32px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.review-rating .star { transition: transform 0.3s ease; /* ensures smooth animation */ } 
+.review-card:hover .review-rating .star { transform: scale(1.3); /* makes the star bigger */ }
+
+
+
+
+.review-rating {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 4px;
+}
+
+.review-rating .star {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.review-rating .star.filled {
+  color: {{ section.settings.star_color | default: '#FFD700' }};
+}
+
+.review-rating .star.empty {
+  color: #e0e0e0;
+}
+
+.review-text {
+  flex-grow: 1;
+  color: {{ section.settings.card_text_color | default: '#333' }};
+}
+
+.review-text p {
+  margin: 0 0 1em 0;
+}
+
+.review-text p:last-child {
+  margin-bottom: 0;
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.review-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-avatar.placeholder {
+  background: {{ section.settings.accent_color | default: '#4F46E5' }};
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-name {
+  font-weight: 600;
+  color: {{ section.settings.card_text_color | default: '#333' }};
+}
+
+.review-location {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.reviews-swiper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: {{ section.settings.accent_color | default: '#4F46E5' }};
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  color: currentColor;
+  font-weight: bold;
+}
+
+.swiper-button-prev {
+  left: -24px;
+}
+
+.swiper-button-next {
+  right: -24px;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 120px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(0,0,0,0.2);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: {{ section.settings.accent_color | default: '#4F46E5' }};
+  transform: scale(1.2);
+}
+
+.reviews-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.reviews-cta .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  background: {{ section.settings.accent_color | default: '#4F46E5' }};
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.reviews-cta .button:hover {
+  background: transparent;
+  color: {{ section.settings.accent_color | default: '#4F46E5' }};
+  border-color: {{ section.settings.accent_color | default: '#4F46E5' }};
+  transform: translateY(-2px);
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 300px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-reviews {
+    padding: 40px 16px;
+  }
+  
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .reviews-header {
+    margin-bottom: 40px;
+  }
+  
+  .review-card {
+    padding: 24px;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+  
+  .reviews-cta .button {
+    width: 100%;
+    padding: 14px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperEl = document.querySelector('.reviews-swiper');
+  
+  if (swiperEl) {
+    // Check if Swiper is already loaded
+    if (typeof Swiper === 'undefined') {
+      console.warn('Swiper library not loaded. Loading now...');
+      loadSwiper();
+    } else {
+      initializeSwiper();
+    }
+  }
+
+  function loadSwiper() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+    script.onload = initializeSwiper;
+    document.head.appendChild(script);
+  }
+
+  function initializeSwiper() {
+    if (typeof Swiper === 'undefined') {
+      console.error('Swiper failed to load');
+      return;
+    }
+
+    const slidesCount = document.querySelectorAll('.swiper-slide').length;
+    
+    new Swiper('.reviews-swiper', {
+      loop: {{ section.settings.autoplay | json }} && slidesCount > 1,
+      autoplay: {{ section.settings.autoplay | json }} ? {
+        delay: {{ section.settings.autoplay_speed | json }},
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      } : false,
+      pagination: {{ section.settings.show_pagination | json }} ? {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+      } : false,
+      navigation: {{ section.settings.show_arrows | json }} ? {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      } : false,
+      slidesPerView: {{ section.settings.slides_mobile | json }},
+      spaceBetween: 24,
+      grabCursor: true,
+      speed: 600,
+      effect: 'slide',
+      breakpoints: {
+        480: {
+          slidesPerView: Math.min(2, {{ section.settings.slides_mobile | json }}),
+          spaceBetween: 20
+        },
+        768: {
+          slidesPerView: {{ section.settings.slides_tablet | json }},
+          spaceBetween: 24
+        },
+        1024: {
+          slidesPerView: {{ section.settings.slides_desktop | json }},
+          spaceBetween: 32
+        }
+      },
+      on: {
+        init: function() {
+          // Add ARIA live region for screen readers
+          const swiper = this;
+          const slide = swiper.slides[swiper.activeIndex];
+          const reviewName = slide.querySelector('.review-name');
+          if (reviewName) {
+            const liveRegion = document.createElement('div');
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.setAttribute('aria-atomic', 'true');
+            liveRegion.className = 'sr-only';
+            liveRegion.textContent = 'Now viewing review by ' + reviewName.textContent;
+            swiper.el.appendChild(liveRegion);
+          }
+        },
+        slideChange: function() {
+          // Update ARIA live region on slide change
+          const swiper = this;
+          const slide = swiper.slides[swiper.activeIndex];
+          const reviewName = slide.querySelector('.review-name');
+          const liveRegion = swiper.el.querySelector('.sr-only[aria-live]');
+          
+          if (reviewName && liveRegion) {
+            liveRegion.textContent = 'Now viewing review by ' + reviewName.textContent;
+          }
+        }
+      }
+    });
+  }
+
+  // Keyboard navigation for slider
+  if (document.querySelector('.swiper-button-next')) {
+    document.querySelectorAll('.swiper-button-next, .swiper-button-prev').forEach(button => {
+      button.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+      
+      // Add focus styles for keyboard users
+      button.addEventListener('focus', function() {
+        this.style.outline = '2px solid ' + '{{ section.settings.accent_color | default: "#4F46E5" }}';
+        this.style.outlineOffset = '2px';
+      });
+      
+      button.addEventListener('blur', function() {
+        this.style.outline = 'none';
+      });
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Hear What Customers Are Saying"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Real reviews from real customers"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout Type",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show Pagination Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed (ms)",
+      "min": 2000,
+      "max": 9000,
+      "step": 1000,
+      "default": 4000,
+      "unit": "ms"
+    },
+    {
+      "type": "range",
+      "id": "slides_desktop",
+      "label": "Slides per view (Desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "slides_tablet",
+      "label": "Slides per view (Tablet)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slides_mobile",
+      "label": "Slides per view (Mobile)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_avatar",
+      "label": "Show Reviewer Avatar",
+      "default": true
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "text_font",
+      "label": "Review Text Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#4F46E5"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Call to Action Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "View All Reviews"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Review Text",
+          "default": "<p>This product exceeded my expectations! The quality is amazing and it arrived quickly. I would definitely recommend this to anyone looking for a reliable solution.</p>"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Customer Location",
+          "default": "New York, NY"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Customer Avatar"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>Absolutely love this product! It has made my daily routine so much easier. The quality is outstanding and I can't recommend it enough.</p>",
+            "name": "Sarah Johnson",
+            "location": "Los Angeles, CA"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 4,
+            "text": "<p>Great value for money. The product works exactly as described and customer service was very helpful when I had questions.</p>",
+            "name": "Michael Chen",
+            "location": "Chicago, IL"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>I've tried similar products before, but this one is by far the best. The attention to detail is impressive and it's built to last.</p>",
+            "name": "Emily Rodriguez",
+            "location": "Miami, FL"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

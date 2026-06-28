@@ -1,0 +1,760 @@
+{% comment %}
+Product Slider Pro - Isolated Version
+This section won't affect theme layout
+{% endcomment %}
+
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'product-slider-pro.css' | asset_url | stylesheet_tag }}
+
+<section class="product-slider-pro-section" 
+         id="product-slider-{{ section.id }}" 
+         aria-label="Product Slider"
+         data-section-id="{{ section.id }}"
+         data-autoplay="{{ section.settings.autoplay }}"
+         data-autoplay-speed="{{ section.settings.autoplay_speed }}"
+         data-slides-per-view="{{ section.settings.slides_per_view }}"
+         data-loop="{{ section.settings.loop }}"
+         data-effect="{{ section.settings.slide_effect }}"
+         data-arrows="{{ section.settings.show_arrows }}"
+         data-dots="{{ section.settings.show_dots }}"
+         data-draggable="{{ section.settings.draggable }}"
+         data-spacing="{{ section.settings.spacing }}"
+         data-center-slides="{{ section.settings.center_slides }}"
+         style="
+           --slider-bg: {{ section.settings.slider_bg_color }};
+           --card-bg: {{ section.settings.card_bg_color }};
+           --text-primary: {{ section.settings.text_primary_color }};
+           --text-secondary: {{ section.settings.text_secondary_color }};
+           --accent-color: {{ section.settings.accent_color }};
+           --border-color: {{ section.settings.border_color }};
+           --button-bg: {{ section.settings.button_bg_color }};
+           --button-text: {{ section.settings.button_text_color }};
+           --button-hover-bg: {{ section.settings.button_hover_bg_color }};
+           --button-hover-text: {{ section.settings.button_hover_text_color }};
+           --sale-color: {{ section.settings.sale_color }};
+           --arrow-color: {{ section.settings.arrow_color }};
+           --dot-color: {{ section.settings.dot_color }};
+           --dot-active-color: {{ section.settings.dot_active_color }};
+           --title-font-size: {{ section.settings.title_font_size }}px;
+           --title-font-weight: {{ section.settings.title_font_weight }};
+           --price-font-size: {{ section.settings.price_font_size }}px;
+           --button-font-size: {{ section.settings.button_font_size }}px;
+           --card-radius: {{ section.settings.card_radius }}px;
+           --button-radius: {{ section.settings.button_radius }}px;
+           --card-shadow: {{ section.settings.card_shadow }};
+           --image-aspect-ratio: {{ section.settings.image_aspect_ratio }};
+           --line-width: {{ section.settings.line_width }}px;
+           --line-height: {{ section.settings.line_height }}px;
+         ">
+  
+  <div class="section-header {% if section.settings.text_alignment == 'left' %}text-left{% elsif section.settings.text_alignment == 'right' %}text-right{% else %}text-center{% endif %}">
+    {% if section.settings.show_lines %}
+    <h2 class="section-title">
+      <span class="line before" style="background-color: {{ section.settings.line_color_before }}"></span>
+      <span class="title-text">{{ section.settings.title }}</span>
+      <span class="line after" style="background-color: {{ section.settings.line_color_after }}"></span>
+    </h2>
+    {% else %}
+    <h2 class="section-title no-lines">{{ section.settings.title }}</h2>
+    {% endif %}
+    
+    {% if section.settings.subtitle != blank %}
+      <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+    
+    {% if section.settings.show_view_all %}
+      <a href="{{ section.settings.collection.url | default: '#' }}" class="view-all-btn">
+        {{ section.settings.view_all_text }}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="slider-container page-width">
+    {% if section.settings.show_arrows %}
+    <button class="slider-arrow prev" aria-label="Previous products">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    {% endif %}
+    
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% assign collection = section.settings.collection %}
+        {% if collection and collection.products_count > 0 %}
+          {% for product in collection.products limit: section.settings.product_limit %}
+            <div class="swiper-slide">
+              <div class="product-card {% if product.compare_at_price > product.price %}on-sale{% endif %}">
+                <a href="{{ product.url }}" class="product-image-wrapper">
+                  <div class="image-container" style="padding-bottom: calc(100% / {{ section.settings.image_aspect_ratio }})">
+                    <img 
+                      src="{{ product.featured_image | img_url: '300x' }}" 
+                      data-src="{{ product.featured_image | img_url: '600x' }}" 
+                      alt="{{ product.title }}" 
+                      class="primary-image lazy-image"
+                      loading="lazy"
+                      width="300"
+                      height="300">
+                    
+                    {% if product.images.size > 1 and section.settings.show_hover_image %}
+                      <img 
+                        src="{{ product.images[1] | img_url: '300x' }}" 
+                        data-src="{{ product.images[1] | img_url: '600x' }}" 
+                        alt="{{ product.title }}" 
+                        class="hover-image lazy-image"
+                        loading="lazy"
+                        width="300"
+                        height="300">
+                    {% endif %}
+                    
+                    {% if product.compare_at_price > product.price and section.settings.show_sale_badge %}
+                      <div class="sale-badge">{{ section.settings.sale_badge_text }}</div>
+                    {% endif %}
+                    
+                    {% if section.settings.show_new_badge %}
+                      {% assign product_created_at = product.created_at | date: '%s' %}
+                      {% assign now_timestamp = 'now' | date: '%s' %}
+                      {% assign difference = now_timestamp | minus: product_created_at %}
+                      {% assign difference_in_days = difference | divided_by: 86400 %}
+                      {% if difference_in_days <= section.settings.new_product_days %}
+                        <div class="new-badge">{{ section.settings.new_badge_text }}</div>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </a>
+                
+                <div class="product-info">
+                  {% if section.settings.show_vendor and product.vendor != blank %}
+                    <p class="product-vendor">{{ product.vendor }}</p>
+                  {% endif %}
+                  
+                  <h3 class="product-title">
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                  </h3>
+                  
+                  {% if section.settings.show_rating %}
+                    <div class="product-rating">
+                      <div class="stars">
+                        {% assign rating = product.metafields.reviews.rating.value | default: 4 %}
+                        {% for i in (1..5) %}
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="{% if i <= rating %}currentColor{% else %}none{% endif %}" stroke="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                          </svg>
+                        {% endfor %}
+                      </div>
+                      <span class="rating-count">({{ product.metafields.reviews.rating_count | default: 0 }})</span>
+                    </div>
+                  {% endif %}
+                  
+                  <div class="price-container">
+                    {% if product.compare_at_price > product.price %}
+                      <span class="compare-price">{{ product.compare_at_price | money }}</span>
+                    {% endif %}
+                    <span class="current-price">{{ product.price | money }}</span>
+                  </div>
+                  
+                  {% if section.settings.show_product_options and product.has_only_default_variant == false %}
+                    <div class="product-options">
+                      {% for option in product.options_with_values limit: 1 %}
+                        <div class="option-values">
+                          {% for value in option.values %}
+                            <span class="option-value">{{ value }}</span>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  
+                  {% if section.settings.show_add_to_cart %}
+                    <form method="post" action="/cart/add" class="add-to-cart-form">
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                      <button type="submit" class="add-to-cart-btn" aria-label="Add {{ product.title }} to cart">
+                        {% if section.settings.show_cart_icon %}
+                          <svg class="cart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        {% endif %}
+                        {{ section.settings.add_to_cart_text }}
+                      </button>
+                    </form>
+                  {% endif %}
+                  
+                  {% if section.settings.show_quick_view %}
+                    <button class="quick-view-btn" data-product-handle="{{ product.handle }}">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      {{ section.settings.quick_view_text }}
+                    </button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          {% comment %} Fallback placeholder products {% endcomment %}
+          {% for i in (1..section.settings.product_limit) %}
+            <div class="swiper-slide">
+              <div class="product-card placeholder">
+                <div class="product-image-wrapper">
+                  <div class="image-container placeholder-img" style="padding-bottom: calc(100% / {{ section.settings.image_aspect_ratio }})">
+                    {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                </div>
+                <div class="product-info">
+                  <h3 class="product-title">Product {{ i }}</h3>
+                  <div class="price-container">
+                    <span class="current-price">$99.99</span>
+                  </div>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      
+      {% if section.settings.show_dots %}
+        <div class="swiper-pagination"></div>
+      {% endif %}
+    </div>
+    
+    {% if section.settings.show_arrows %}
+    <button class="slider-arrow next" aria-label="Next products">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderSection = document.getElementById('product-slider-{{ section.id }}');
+  if (!sliderSection) return;
+  
+  // Load Swiper only if not already loaded
+  function loadSwiper() {
+    if (typeof Swiper === 'undefined') {
+      const script = document.createElement('script');
+      script.src = '{{ "swiper-bundle.min.js" | asset_url }}';
+      script.onload = initializeSlider;
+      document.head.appendChild(script);
+    } else {
+      initializeSlider();
+    }
+  }
+  
+  function initializeSlider() {
+    // Get settings from data attributes
+    const autoplayEnabled = sliderSection.dataset.autoplay === 'true';
+    const autoplaySpeed = parseInt(sliderSection.dataset.autoplaySpeed) || 4000;
+    const slidesPerView = parseInt(sliderSection.dataset.slidesPerView) || 4;
+    const loopEnabled = sliderSection.dataset.loop === 'true';
+    const showArrows = sliderSection.dataset.arrows === 'true';
+    const showDots = sliderSection.dataset.dots === 'true';
+    const draggable = sliderSection.dataset.draggable === 'true';
+    const spacing = parseInt(sliderSection.dataset.spacing) || 20;
+    const centerSlides = sliderSection.dataset.centerSlides === 'true';
+    
+    // Initialize Swiper
+    const swiper = new Swiper(sliderSection.querySelector('.swiper'), {
+      slidesPerView: slidesPerView,
+      spaceBetween: spacing,
+      loop: loopEnabled,
+      centeredSlides: centerSlides,
+      grabCursor: draggable,
+      speed: 500,
+      
+      autoplay: autoplayEnabled ? {
+        delay: autoplaySpeed,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true
+      } : false,
+      
+      navigation: showArrows ? {
+        nextEl: sliderSection.querySelector('.slider-arrow.next'),
+        prevEl: sliderSection.querySelector('.slider-arrow.prev'),
+        disabledClass: 'disabled'
+      } : false,
+      
+      pagination: showDots ? {
+        el: sliderSection.querySelector('.swiper-pagination'),
+        clickable: true,
+        dynamicBullets: true
+      } : false,
+      
+      breakpoints: {
+        320: {
+          slidesPerView: 1.2,
+          spaceBetween: 12
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: slidesPerView,
+          spaceBetween: spacing
+        }
+      }
+    });
+    
+    // Lazy load images
+    const images = sliderSection.querySelectorAll('.lazy-image');
+    images.forEach(img => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+    });
+    
+    // Add to cart functionality
+    sliderSection.querySelectorAll('.add-to-cart-form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        
+        // You can add AJAX cart functionality here
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Handle success (optional)
+          console.log('Product added to cart:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      });
+    });
+  }
+  
+  // Initialize on load
+  loadSwiper();
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Slider Pro",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Browse our latest collection"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size",
+      "min": 16,
+      "max": 72,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "checkbox",
+      "id": "show_lines",
+      "label": "Show Lines",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "line_color_before",
+      "label": "Left Line Color",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "line_color_after",
+      "label": "Right Line Color",
+      "default": "#dc2626"
+    },
+    {
+      "type": "range",
+      "id": "line_width",
+      "label": "Line Width",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Line Height",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "default": 2,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Collection Settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "label": "Number of Products",
+      "min": 2,
+      "max": 24,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view",
+      "label": "Slides Per View",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Space Between Slides",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Enable Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed",
+      "min": 1000,
+      "max": 9000,
+      "step": 1000,
+      "default": 4000,
+      "unit": "ms"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show Pagination Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "draggable",
+      "label": "Enable Dragging",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product Card Settings"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card Border Radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_aspect_ratio",
+      "label": "Image Aspect Ratio",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "default": 1,
+      "info": "Width divided by height"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hover_image",
+      "label": "Show Hover Image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sale_badge",
+      "label": "Show Sale Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sale_badge_text",
+      "label": "Sale Badge Text",
+      "default": "Sale"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_new_badge",
+      "label": "Show New Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "new_badge_text",
+      "label": "New Badge Text",
+      "default": "New"
+    },
+    {
+      "type": "range",
+      "id": "new_product_days",
+      "label": "Product Age (Days)",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 7,
+      "info": "Products newer than this many days show 'New' badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show Vendor",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Rating",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "label": "Price Font Size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show Add to Cart Button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_icon",
+      "label": "Show Cart Icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to Cart Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_view",
+      "label": "Show Quick View Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "quick_view_text",
+      "label": "Quick View Text",
+      "default": "Quick View"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button Border Radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "slider_bg_color",
+      "label": "Slider Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background",
+      "default": "#f8fafc"
+    },
+    {
+      "type": "color",
+      "id": "text_primary_color",
+      "label": "Primary Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_secondary_color",
+      "label": "Secondary Text Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "color",
+      "id": "sale_color",
+      "label": "Sale Color",
+      "default": "#dc2626"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Arrow Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot Color",
+      "default": "#cbd5e1"
+    },
+    {
+      "type": "color",
+      "id": "dot_active_color",
+      "label": "Active Dot Color",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button Hover Background",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button Hover Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider Pro",
+      "category": "Products",
+      "settings": {
+        "title": "Featured Products",
+        "subtitle": "Shop our best selling products",
+        "product_limit": 8,
+        "slides_per_view": 4,
+        "autoplay": true,
+        "autoplay_speed": 4000
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1113 @@
+{%- style -%}
+  /* Base Styles */
+  .premium-announcement-bar {
+    position: relative;
+    overflow: hidden;
+    padding: {{ section.settings.padding }}px 0;
+    background: {{ section.settings.background_color }};
+    border-bottom: {{ section.settings.border_thickness }}px solid {{ section.settings.border_color }};
+    font-family: {{ section.settings.font_family }};
+  }
+
+  /* Animated Background */
+  .premium-announcement-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: {{ section.settings.animated_bg_gradient }};
+    animation: shimmerBackground {{ section.settings.bg_animation_speed }}s linear infinite;
+    z-index: 1;
+  }
+
+  /* Animated Border */
+  .premium-announcement-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -{{ section.settings.border_thickness }}px;
+    left: 0;
+    width: 100%;
+    height: {{ section.settings.border_thickness }}px;
+    background: {{ section.settings.animated_border_gradient }};
+    animation: borderFlow {{ section.settings.border_animation_speed }}s linear infinite;
+  }
+
+  /* Content Container */
+  .announcement-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  /* Scrolling Text Container */
+  .scrolling-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 60%;
+  }
+
+  /* Scrolling Text - FIXED ANIMATION */
+  .scrolling-text {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    animation: scrollText {{ section.settings.text_scroll_speed }}s linear infinite;
+    white-space: nowrap;
+  }
+
+  .premium-announcement-bar:hover .scrolling-text {
+    animation-play-state: paused;
+  }
+
+  /* Text Items */
+  .text-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: {{ section.settings.font_size }}px;
+    font-weight: {{ section.settings.font_weight }};
+    color: {{ section.settings.text_color }};
+    text-shadow: {{ section.settings.text_shadow }};
+    flex-shrink: 0;
+  }
+
+  /* Animated Icons */
+  .animated-icon {
+    animation: bounce 2s infinite;
+    font-size: {{ section.settings.icon_size }}px;
+  }
+
+  .icon-sparkle {
+    animation: sparkle 1.5s infinite;
+  }
+
+  .icon-spin {
+    animation: spin 3s linear infinite;
+  }
+
+  /* COUNTDOWN TIMER - SIMPLIFIED BUT VISIBLE */
+  .countdown-container {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    gap: 15px;
+    margin-left: 40px;
+    flex-shrink: 0;
+  }
+
+  .countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    animation: pulse 2s infinite;
+    min-width: 60px;
+  }
+
+  .countdown-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: {{ section.settings.countdown_color }};
+    display: block;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    display: block;
+  }
+
+  /* Close Button */
+  .announcement-close {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: {{ section.settings.text_color }};
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .announcement-close:hover {
+    opacity: 1;
+  }
+
+  /* Animations - FIXED TIMINGS */
+  @keyframes scrollText {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes shimmerBackground {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  @keyframes borderFlow {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Snowflakes for Winter Theme */
+  .snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 12px;
+    animation: snowfall linear infinite;
+  }
+
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Christmas Lights Animation */
+  .christmas-lights {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+  }
+
+  .light {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+  }
+
+  /* Fireworks for New Year */
+  .firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Confetti for Party Theme */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .announcement-content {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .scrolling-container {
+      max-width: 100%;
+      order: 1;
+    }
+    
+    .countdown-container {
+      margin-left: 0;
+      gap: 8px;
+      order: 2;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .countdown-item {
+      padding: 6px 8px;
+      min-width: 50px;
+    }
+    
+    .countdown-number {
+      font-size: 14px;
+    }
+    
+    .countdown-label {
+      font-size: 8px;
+    }
+    
+    .text-item {
+      font-size: {{ section.settings.font_size | times: 0.8 }}px;
+    }
+
+    .announcement-close {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      order: 3;
+      margin-left: auto;
+    }
+  }
+
+  /* Theme-specific styles */
+  {% if section.settings.theme == 'christmas' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #1a5f1a, #b30000) !important;
+    }
+    .animated-icon { color: #ffd700 !important; }
+    .text-item span { color: #ffd700 !important; }
+    .countdown-number { color: #ffd700 !important; }
+  {% endif %}
+
+  {% if section.settings.theme == 'winter' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #2c3e50, #4a6572) !important;
+    }
+    .animated-icon { color: #e3f2fd !important; }
+    .text-item span { color: #e3f2fd !important; }
+    .countdown-number { color: #e3f2fd !important; }
+  {% endif %}
+
+  {% if section.settings.theme == 'new_year' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #003366, #660033) !important;
+    }
+    .animated-icon { color: #ffcc00 !important; }
+    .text-item span { color: #ffcc00 !important; }
+    .countdown-number { color: #ffcc00 !important; }
+  {% endif %}
+
+  {% if section.settings.theme == 'halloween' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #000000, #ff6b00) !important;
+    }
+    .animated-icon { color: #ff9900 !important; }
+    .text-item span { color: #ff9900 !important; }
+    .countdown-number { color: #ff9900 !important; }
+  {% endif %}
+
+  {% if section.settings.theme == 'valentine' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #ff0066, #ff66b2) !important;
+    }
+    .animated-icon { color: #ffffff !important; }
+    .text-item span { color: #ffffff !important; }
+    .countdown-number { color: #ffffff !important; }
+  {% endif %}
+
+  {% if section.settings.theme == 'summer' %}
+    .premium-announcement-bar {
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+    }
+    .animated-icon { color: #ffff00 !important; }
+    .text-item span { color: #ffff00 !important; }
+    .countdown-number { color: #ffff00 !important; }
+  {% endif %}
+{%- endstyle -%}
+
+{%- if section.settings.show_announcement -%}
+<div class="premium-announcement-bar" id="premiumAnnouncementBar" data-theme="{{ section.settings.theme }}">
+  {%- if section.settings.theme == 'winter' -%}
+  <div class="snowflakes" id="snowflakes"></div>
+  {%- endif -%}
+  
+  {%- if section.settings.theme == 'christmas' -%}
+  <div class="christmas-lights" id="christmasLights"></div>
+  {%- endif -%}
+  
+  {%- if section.settings.theme == 'new_year' -%}
+  <div class="fireworks-container" id="fireworks"></div>
+  {%- endif -%}
+  
+  {%- if section.settings.theme == 'valentine' or section.settings.theme == 'summer' -%}
+  <div class="confetti-container" id="confetti"></div>
+  {%- endif -%}
+  
+  <div class="announcement-content">
+    <div class="scrolling-container">
+      <div class="scrolling-text" id="scrollingText">
+        <!-- Content will be duplicated by JavaScript for seamless loop -->
+        <div class="text-item">
+          <span class="animated-icon icon-sparkle">
+            {%- if section.settings.theme == 'christmas' -%}🎄
+            {%- elsif section.settings.theme == 'winter' -%}❄️
+            {%- elsif section.settings.theme == 'new_year' -%}🎆
+            {%- elsif section.settings.theme == 'halloween' -%}🎃
+            {%- elsif section.settings.theme == 'valentine' -%}❤️
+            {%- elsif section.settings.theme == 'summer' -%}☀️
+            {%- else -%}✨
+            {%- endif -%}
+          </span>
+          {{ section.settings.message_1 }}
+        </div>
+        <div class="text-item">
+          <span class="animated-icon icon-spin">
+            {%- if section.settings.theme == 'christmas' -%}🎅
+            {%- elsif section.settings.theme == 'winter' -%}⛄
+            {%- elsif section.settings.theme == 'new_year' -%}🥂
+            {%- elsif section.settings.theme == 'halloween' -%}👻
+            {%- elsif section.settings.theme == 'valentine' -%}💝
+            {%- elsif section.settings.theme == 'summer' -%}🏖️
+            {%- else -%}🎄
+            {%- endif -%}
+          </span>
+          {{ section.settings.message_2 }}
+        </div>
+        <div class="text-item">
+          <span class="animated-icon">
+            {%- if section.settings.theme == 'christmas' -%}🎁
+            {%- elsif section.settings.theme == 'winter' -%}🧣
+            {%- elsif section.settings.theme == 'new_year' -%}🎉
+            {%- elsif section.settings.theme == 'halloween' -%}🍬
+            {%- elsif section.settings.theme == 'valentine' -%}💌
+            {%- elsif section.settings.theme == 'summer' -%}🌊
+            {%- else -%}🎁
+            {%- endif -%}
+          </span>
+          {{ section.settings.message_3 }}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.show_countdown -%}
+    <!-- SIMPLE COUNTDOWN THAT WILL DEFINITELY SHOW -->
+    <div class="countdown-container" id="simpleCountdown">
+      <div class="countdown-item">
+        <span class="countdown-number" id="cdDays">00</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cdHours">00</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cdMinutes">00</span>
+        <span class="countdown-label">Mins</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number" id="cdSeconds">00</span>
+        <span class="countdown-label">Secs</span>
+      </div>
+    </div>
+    {%- endif -%}
+
+    <button class="announcement-close" id="announcementClose">✕</button>
+  </div>
+</div>
+
+<script>
+// ENHANCED ANNOUNCEMENT BAR WITH ALL PREMIUM FEATURES
+(function() {
+  'use strict';
+  
+  console.log('=== PREMIUM ANNOUNCEMENT BAR STARTING ===');
+  
+  // Wait for full page load to avoid any conflicts
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+  function init() {
+    console.log('🎯 Initializing premium announcement bar...');
+    
+    // Initialize scrolling text with duplication
+    initScrollingText();
+    
+    // Initialize countdown if enabled
+    {% if section.settings.show_countdown %}
+    initCountdown();
+    {% endif %}
+    
+    // Initialize close button
+    initCloseButton();
+    
+    // Initialize theme-specific effects
+    initThemeEffects();
+    
+    console.log('✅ All features initialized');
+  }
+  
+  function initScrollingText() {
+    const scrollingText = document.getElementById('scrollingText');
+    if (!scrollingText) {
+      console.log('⚠️ Scrolling text element not found');
+      return;
+    }
+    
+    // Duplicate content for seamless loop (only if not already duplicated)
+    if (scrollingText.children.length === 3) {
+      const content = scrollingText.innerHTML;
+      scrollingText.innerHTML = content + content;
+      console.log('✅ Scrolling text duplicated for seamless loop');
+    }
+  }
+  
+  {% if section.settings.show_countdown %}
+  function initCountdown() {
+    console.log('⏰ Initializing countdown timer...');
+    
+    const countdownEl = document.getElementById('simpleCountdown');
+    if (!countdownEl) {
+      console.error('❌ Countdown element not found!');
+      return;
+    }
+    
+    // Make absolutely sure it's visible
+    countdownEl.style.display = 'flex';
+    countdownEl.style.visibility = 'visible';
+    countdownEl.style.opacity = '1';
+    
+    // Parse date with timezone handling
+    const countdownDateStr = '{{ section.settings.countdown_date }}';
+    let targetDate;
+    
+    if (countdownDateStr) {
+      // Add time to ensure end of day
+      targetDate = new Date(countdownDateStr + 'T23:59:59');
+    } else {
+      targetDate = new Date('2024-12-31T23:59:59');
+    }
+    
+    console.log('🎯 Target date:', targetDate);
+    
+    if (isNaN(targetDate.getTime())) {
+      console.error('Invalid date format');
+      countdownEl.innerHTML = '<div class="text-item">Sale Active!</div>';
+      return;
+    }
+    
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      
+      if (diff <= 0) {
+        countdownEl.innerHTML = '<div class="text-item">🎉 Sale Ended!</div>';
+        if (window.countdownInterval) {
+          clearInterval(window.countdownInterval);
+        }
+        return;
+      }
+      
+      // Fixed calculation to prevent days changing with seconds
+      const totalSeconds = Math.floor(diff / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+      
+      const days = totalDays;
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60;
+      const seconds = totalSeconds % 60;
+      
+      // Update elements directly
+      const daysEl = document.getElementById('cdDays');
+      const hoursEl = document.getElementById('cdHours');
+      const minutesEl = document.getElementById('cdMinutes');
+      const secondsEl = document.getElementById('cdSeconds');
+      
+      if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+    
+    // Update immediately and every second
+    updateCountdown();
+    window.countdownInterval = setInterval(updateCountdown, 1000);
+    
+    console.log('✅ Countdown timer started successfully');
+  }
+  {% endif %}
+  
+  function initCloseButton() {
+    const closeBtn = document.getElementById('announcementClose');
+    const bar = document.getElementById('premiumAnnouncementBar');
+    
+    if (closeBtn && bar) {
+      closeBtn.addEventListener('click', function() {
+        bar.style.display = 'none';
+        document.cookie = "announcementClosed=true; max-age=86400; path=/";
+        console.log('✅ Announcement closed');
+      });
+    }
+    
+    // Check if previously closed
+    if (document.cookie.includes('announcementClosed=true') && bar) {
+      bar.style.display = 'none';
+      console.log('ℹ️ Announcement was previously closed');
+    }
+  }
+  
+  function initThemeEffects() {
+    const theme = '{{ section.settings.theme }}';
+    console.log('🎨 Initializing theme effects for:', theme);
+    
+    switch(theme) {
+      case 'winter':
+        createSnowflakes();
+        break;
+      case 'christmas':
+        createChristmasLights();
+        break;
+      case 'new_year':
+        createFireworks();
+        break;
+      case 'valentine':
+      case 'summer':
+        createConfetti();
+        break;
+    }
+  }
+  
+  function createSnowflakes() {
+    const container = document.getElementById('snowflakes');
+    if (!container) return;
+    
+    const snowflakes = ['❄', '❅', '❆', '•'];
+    const numberOfSnowflakes = 30;
+    
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      snowflake.style.left = Math.random() * 100 + '%';
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      snowflake.style.animationDelay = Math.random() * 5 + 's';
+      container.appendChild(snowflake);
+    }
+    console.log('❄️ Snowflakes created');
+  }
+  
+  function createChristmasLights() {
+    const container = document.getElementById('christmasLights');
+    if (!container) return;
+    
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+    const numberOfLights = 50;
+    
+    for (let i = 0; i < numberOfLights; i++) {
+      const light = document.createElement('div');
+      light.className = 'light';
+      light.style.left = (i * (100 / numberOfLights)) + '%';
+      light.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      light.style.animationDelay = (Math.random() * 2) + 's';
+      container.appendChild(light);
+    }
+    console.log('🎄 Christmas lights created');
+  }
+  
+  function createFireworks() {
+    const container = document.getElementById('fireworks');
+    if (!container) return;
+    
+    // Create fireworks every few seconds
+    setInterval(() => {
+      if (Math.random() > 0.7) { // 30% chance every interval
+        createSingleFirework();
+      }
+    }, 2000);
+    
+    console.log('🎆 Fireworks system ready');
+  }
+  
+  function createSingleFirework() {
+    const container = document.getElementById('fireworks') || document.body;
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+    
+    const centerX = Math.random() * window.innerWidth;
+    const centerY = Math.random() * 100; // Top part of announcement bar
+    
+    for (let i = 0; i < 20; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'firework';
+      particle.style.left = centerX + 'px';
+      particle.style.top = centerY + 'px';
+      particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 2 + Math.random() * 3;
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed;
+      
+      container.appendChild(particle);
+      
+      let x = centerX;
+      let y = centerY;
+      let opacity = 1;
+      
+      const animate = () => {
+        x += vx;
+        y += vy;
+        opacity -= 0.02;
+        
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.opacity = opacity;
+        
+        if (opacity > 0) {
+          requestAnimationFrame(animate);
+        } else {
+          particle.remove();
+        }
+      };
+      
+      animate();
+    }
+  }
+  
+  function createConfetti() {
+    const container = document.getElementById('confetti') || document.body;
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+    const shapes = ['circle', 'square', 'triangle'];
+    
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.top = '-10px';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)] === 'circle' ? '50%' : '0';
+      
+      container.appendChild(confetti);
+      
+      // Animate confetti falling
+      const duration = 3 + Math.random() * 4;
+      const delay = Math.random() * 2;
+      
+      confetti.style.transition = `all ${duration}s cubic-bezier(0.1, 0.8, 0.3, 1) ${delay}s`;
+      confetti.style.opacity = '1';
+      
+      setTimeout(() => {
+        confetti.style.transform = `translateY(100px) rotate(${Math.random() * 360}deg)`;
+        confetti.style.opacity = '0';
+      }, 10);
+      
+      // Remove after animation
+      setTimeout(() => {
+        confetti.remove();
+      }, (duration + delay) * 1000);
+    }
+    
+    // Create new confetti periodically
+    setTimeout(createConfetti, 3000);
+    console.log('🎊 Confetti created');
+  }
+  
+})();
+
+// Fallback: Try again after a short delay
+setTimeout(function() {
+  const countdownEl = document.getElementById('simpleCountdown');
+  if (countdownEl && countdownEl.innerHTML.includes('00')) {
+    console.log('🔄 Countdown might be stuck, attempting reinitialization...');
+    // Force a re-render by toggling display
+    countdownEl.style.display = 'none';
+    setTimeout(() => {
+      countdownEl.style.display = 'flex';
+    }, 50);
+  }
+}, 2000);
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Premium Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement bar",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Seasonal Theme",
+      "options": [
+        {
+          "value": "christmas",
+          "label": "🎄 Christmas"
+        },
+        {
+          "value": "winter",
+          "label": "❄️ Winter"
+        },
+        {
+          "value": "new_year",
+          "label": "🎆 New Year"
+        },
+        {
+          "value": "halloween",
+          "label": "🎃 Halloween"
+        },
+        {
+          "value": "valentine",
+          "label": "❤️ Valentine's"
+        },
+        {
+          "value": "summer",
+          "label": "☀️ Summer"
+        },
+        {
+          "value": "custom",
+          "label": "🎨 Custom"
+        }
+      ],
+      "default": "christmas"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Messages"
+    },
+    {
+      "type": "text",
+      "id": "message_1",
+      "label": "Message 1",
+      "default": "Christmas Sale! Up to 50% Off"
+    },
+    {
+      "type": "text",
+      "id": "message_2",
+      "label": "Message 2",
+      "default": "Free Shipping Worldwide"
+    },
+    {
+      "type": "text",
+      "id": "message_3",
+      "label": "Message 3",
+      "default": "Limited Time Offer - Shop Now!"
+    },
+    {
+      "type": "header",
+      "content": "Countdown Timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Countdown End Date",
+      "info": "Format: YYYY-MM-DD",
+      "default": "2024-12-31"
+    },
+    {
+      "type": "header",
+      "content": "Customization"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#1a5f1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "countdown_color",
+      "label": "Countdown Color",
+      "default": "#ffd700"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#ffd700"
+    },
+    {
+      "type": "text",
+      "id": "animated_bg_gradient",
+      "label": "Animated Background Gradient",
+      "default": "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+      "info": "CSS gradient for shimmer effect"
+    },
+    {
+      "type": "text",
+      "id": "animated_border_gradient",
+      "label": "Animated Border Gradient",
+      "default": "linear-gradient(90deg, #ff6b6b, #ffd700, #4ecdc4, #ff6b6b)",
+      "info": "CSS gradient for border animation"
+    },
+    {
+      "type": "header",
+      "content": "Animation Settings"
+    },
+    {
+      "type": "range",
+      "id": "text_scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Text Scroll Speed",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "bg_animation_speed",
+      "min": 2,
+      "max": 10,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Background Animation Speed",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "border_animation_speed",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Border Animation Speed",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Font Family",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Theme Default"
+        },
+        {
+          "value": "'Helvetica Neue', Arial, sans-serif",
+          "label": "Modern"
+        },
+        {
+          "value": "Georgia, serif",
+          "label": "Elegant"
+        },
+        {
+          "value": "'Comic Sans MS', cursive",
+          "label": "Playful"
+        }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "text",
+      "id": "text_shadow",
+      "label": "Text Shadow",
+      "default": "0 2px 4px rgba(0,0,0,0.3)",
+      "info": "CSS text-shadow property"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical Padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "border_thickness",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border Thickness",
+      "default": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Announcement",
+      "category": "Promotional",
+      "settings": {
+        "theme": "christmas",
+        "show_announcement": true,
+        "show_countdown": true,
+        "countdown_date": "2024-12-31",
+        "message_1": "Christmas Sale! Up to 50% Off",
+        "message_2": "Free Shipping Worldwide",
+        "message_3": "Limited Time Offer - Shop Now!"
+      }
+    },
+    {
+      "name": "Winter Announcement",
+      "category": "Promotional",
+      "settings": {
+        "theme": "winter",
+        "show_announcement": true,
+        "show_countdown": true,
+        "countdown_date": "2024-12-31",
+        "message_1": "Winter Sale! Cozy Up with Discounts",
+        "message_2": "Free Shipping on All Orders",
+        "message_3": "Winter Collection - Shop Now!"
+      }
+    },
+    {
+      "name": "New Year Announcement",
+      "category": "Promotional",
+      "settings": {
+        "theme": "new_year",
+        "show_announcement": true,
+        "show_countdown": true,
+        "countdown_date": "2024-12-31",
+        "message_1": "New Year Sale! Fresh Start",
+        "message_2": "Special Discounts for 2024",
+        "message_3": "Celebrate with Savings!"
+      }
+    }
+  ]
+}
+{% endschema %}

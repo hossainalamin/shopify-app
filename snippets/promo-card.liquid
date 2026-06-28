@@ -1,0 +1,113 @@
+<!--
+  Snippet: Promo Card (Updated for 4-item layout)
+  File: snippets/promo-card.liquid
+-->
+
+{%- liquid
+  assign card_url = '#'
+  
+  case block.settings.link_type
+    when 'product'
+      if block.settings.product != blank
+        assign card_url = block.settings.product.url
+      endif
+    when 'collection'
+      if block.settings.collection != blank
+        assign card_url = block.settings.collection.url
+      endif
+    when 'page'
+      if block.settings.page != blank
+        assign card_url = block.settings.page.url
+      endif
+    when 'url'
+      if block.settings.custom_url != blank
+        assign card_url = block.settings.custom_url
+      endif
+  endcase
+
+  assign overlay_opacity = block.settings.overlay_opacity | default: 40
+  assign overlay_color = block.settings.overlay_color | default: '#000000'
+  assign animation_class = 'promo-card--animation-' | append: animation_type
+  
+  if animation_type == 'none'
+    assign animation_class = ''
+  endif
+  
+  assign card_class = 'promo-card promo-card--' | append: card_type | append: ' ' | append: animation_class
+  
+  # Determine placeholder type based on card type
+  case card_type
+    when 'main'
+      assign placeholder_name = 'collection-1'
+    when 'small-1'
+      assign placeholder_name = 'collection-2'
+    when 'small-2'
+      assign placeholder_name = 'collection-3'
+    when 'horizontal'
+      assign placeholder_name = 'collection-4'
+    else
+      assign placeholder_name = 'collection-1'
+  endcase
+-%}
+
+<a 
+  href="{{ card_url }}" 
+  class="{{ card_class }}"
+  {{ block.shopify_attributes }}
+  {% if block.settings.title != blank %}
+    aria-label="{{ block.settings.title }}"
+  {% endif %}
+>
+  <div class="promo-card__image-container">
+    {%- if block.settings.image != blank -%}
+      {%- liquid
+        case card_type
+          when 'main'
+            assign sizes = "(min-width: 990px) calc(66.66vw - 120px), (min-width: 750px) calc(100vw - 120px), calc(100vw - 60px)"
+          when 'small-1', 'small-2'
+            assign sizes = "(min-width: 990px) calc(33.33vw - 90px), (min-width: 750px) calc(50vw - 90px), calc(100vw - 60px)"
+          when 'horizontal'
+            assign sizes = "(min-width: 750px) calc(100vw - 120px), calc(100vw - 60px)"
+        endcase
+      -%}
+      
+      {{ block.settings.image | image_url: width: 800 | image_tag:
+        loading: 'lazy',
+        width: block.settings.image.width,
+        height: block.settings.image.height,
+        class: 'promo-card__image',
+        sizes: sizes,
+        widths: '375, 550, 750, 1100, 1500, 1780, 2000'
+      }}
+    {%- else -%}
+      <div class="promo-card__image placeholder">
+        {{ placeholder_name | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    
+    <div 
+      class="promo-card__overlay" 
+      style="background: linear-gradient(to bottom, transparent 0%, {{ overlay_color | color_modify: 'alpha', overlay_opacity | divided_by: 100.0 }} 100%);"
+    ></div>
+  </div>
+  
+  <div class="promo-card__content">
+    {%- if block.settings.badge != blank -%}
+      <span class="promo-card__badge">{{ block.settings.badge }}</span>
+    {%- endif -%}
+    
+    {%- if block.settings.title != blank -%}
+      <h3 class="promo-card__title">{{ block.settings.title }}</h3>
+    {%- endif -%}
+    
+    {%- if block.settings.subtitle != blank -%}
+      <p class="promo-card__subtitle">{{ block.settings.subtitle }}</p>
+    {%- endif -%}
+    
+    {%- if block.settings.button_text != blank -%}
+      <span class="promo-card__button promo-card__button--{{ block.settings.button_style }}">
+        {{ block.settings.button_text }}
+      </span>
+    {%- endif -%}
+  </div>
+</a>

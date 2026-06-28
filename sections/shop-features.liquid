@@ -1,0 +1,201 @@
+{% comment %}
+  Shop Features Section
+  Premium ThemeForest-standard quality
+  Layout: Icon left, text right, centered
+  Customizable font size & color (no font family)
+  Hover effect: icon enlarges smoothly
+{% endcomment %}
+
+<section class="shop-features" id="shop-features-{{ section.id }}">
+  <div class="container page-width">
+    {% if section.settings.show_features %}
+      <div class="features-grid">
+        {% for block in section.blocks %}
+          <div class="feature-item" {{ block.shopify_attributes }}>
+            <div class="feature-inner">
+              <div class="feature-icon">
+                {% if block.settings.icon %}
+                  <img src="{{ block.settings.icon | image_url: width: 64 }}" alt="{{ block.settings.title | escape }}">
+                {% endif %}
+              </div>
+              <div class="feature-content">
+                <h4 class="feature-title">{{ block.settings.title }}</h4>
+                <p class="feature-description">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #shop-features-{{ section.id }} {
+    padding: 70px 0;
+    background: {{ section.settings.bg_color }};
+  }
+  #shop-features-{{ section.id }} .container {
+  }
+  #shop-features-{{ section.id }} .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  #shop-features-{{ section.id }} .feature-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #shop-features-{{ section.id }} .feature-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: left;
+    width: 100%;
+  }
+  #shop-features-{{ section.id }} .feature-icon img {
+    max-width: 64px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  #shop-features-{{ section.id }} .feature-item:hover .feature-icon img {
+    transform: scale(1.2);
+  }
+  #shop-features-{{ section.id }} .feature-title {
+    margin-bottom: 5px;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size }}px;
+  }
+  #shop-features-{{ section.id }} .feature-description {
+    color: {{ section.settings.desc_color }};
+    font-size: {{ section.settings.desc_size }}px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    #shop-features-{{ section.id }} .feature-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+    #shop-features-{{ section.id }} .feature-icon img {
+      margin-bottom: 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Shop Features",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_features",
+      "label": "Show Shop Features",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Font Size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "desc_size",
+      "label": "Description Font Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Feature Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Fast Delivery"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "For all orders $50 or more"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop Features",
+      "category": "Trust & Support",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Fast Delivery",
+            "description": "For all orders $50 or more"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Product Warranty",
+            "description": "Your Satisfaction is Our Priority"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Top-notch Support",
+            "description": "24/7 support for customers"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Return & Refund",
+            "description": "Easy Returns & Refunds"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

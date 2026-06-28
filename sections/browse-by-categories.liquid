@@ -1,0 +1,233 @@
+{% schema %}
+{
+  "name": "Browse by Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Browse by Categories"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#222222"
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "Heading Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+
+    /* Global Box Options */
+    {
+      "type": "range",
+      "id": "box_font_size",
+      "label": "Box Title Font Size (px)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "box_text_color",
+      "label": "Box Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "box_hover_text_color",
+      "label": "Box Hover Text Color",
+      "default": "#d32f2f"
+    },
+    {
+      "type": "color",
+      "id": "box_bg_color",
+      "label": "Box Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "box_hover_bg_color",
+      "label": "Box Hover Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "box_border_color",
+      "label": "Box Border Color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "range",
+      "id": "box_border_width",
+      "label": "Box Border Width (px)",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "box_border_radius",
+      "label": "Box Border Radius (%)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title"
+        },
+        {
+          "type": "url",
+          "id": "category_link",
+          "label": "Category Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Browse Categories",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="browse-categories">
+  <div class="container page-width">
+    <h2 style="
+      font-size: {{ section.settings.heading_font_size }}px;
+      color: {{ section.settings.heading_color }};
+      text-align: {{ section.settings.heading_position }};
+    ">
+      {{ section.settings.section_heading }}
+    </h2>
+    <div class="categories-grid">
+      {% for block in section.blocks %}
+        <div class="category-item">
+          <a href="{{ block.settings.category_link }}">
+            <div class="image-wrapper">
+              <img src="{{ block.settings.category_image | img_url: 'master' }}" alt="{{ block.settings.category_title }}">
+            </div>
+            <p>{{ block.settings.category_title }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.browse-categories {
+  padding-bottom:70px;
+}
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Always 6 on desktop */
+  gap: 30px;
+}
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 on medium screens */
+  }
+}
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 on tablets */
+  }
+
+
+.categories-grid {
+    gap: 15px;
+}
+
+
+.category-item p {
+    margin: 5px 0;
+}
+
+
+}
+@media (max-width: 480px) {
+  .categories-grid {
+    /*grid-template-columns: 1fr;  1 on mobile */
+  }
+}
+.category-item {
+  background: {{ section.settings.box_bg_color }};
+  border: {{ section.settings.box_border_width }}px solid {{ section.settings.box_border_color }};
+  border-radius: {{ section.settings.box_border_radius }}%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.category-item:hover {
+  background: {{ section.settings.box_hover_bg_color }};
+}
+.category-item a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.category-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.category-item:hover img {
+  transform: scale(1.08);
+}
+.category-item p {
+  font-size: {{ section.settings.box_font_size }}px;
+  color: {{ section.settings.box_text_color }};
+  font-weight: 600;
+  margin-top: 12px;
+  transition: color 0.3s ease;
+}
+.category-item:hover p {
+  color: {{ section.settings.box_hover_text_color }};
+}
+</style>
