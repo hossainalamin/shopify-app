@@ -387,60 +387,71 @@
                 </product-form>
               {%- else -%}
                 {%- assign checkout_quantity_id = 'CheckoutQuantity-' | append: section_id | append: '-' | append: card_product.id -%}
-                <form
-                  method="post"
-                  action="{{ routes.cart_add_url }}"
-                  id="{{ product_form_id }}"
-                  class="form card-checkout-form"
-                >
-                  <input
-                    type="hidden"
-                    name="id"
-                    value="{{ card_product.selected_or_first_available_variant.id }}"
-                    class="product-variant-id"
-                    {% if card_product.selected_or_first_available_variant.available == false %}
-                      disabled
-                    {% endif %}
-                  >
-                  <input type="hidden" name="return_to" value="/checkout">
-                  <div class="card-checkout-form__quantity">
-                    <label class="visually-hidden" for="{{ checkout_quantity_id }}">
-                      {{ 'products.product.quantity.label' | t }}
-                    </label>
+                <product-form data-section-id="{{ section.id }}">
+                  {%- form 'product',
+                    card_product,
+                    id: product_form_id,
+                    class: 'form card-checkout-form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
                     <input
-                      id="{{ checkout_quantity_id }}"
-                      class="card-checkout-form__quantity-input"
-                      type="number"
-                      name="quantity"
-                      value="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
-                      min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
-                      {% if card_product.selected_or_first_available_variant.quantity_rule.max != null %}
-                        max="{{ card_product.selected_or_first_available_variant.quantity_rule.max }}"
-                      {% endif %}
-                      step="{{ card_product.selected_or_first_available_variant.quantity_rule.increment }}"
-                      inputmode="numeric"
+                      type="hidden"
+                      name="id"
+                      value="{{ card_product.selected_or_first_available_variant.id }}"
+                      class="product-variant-id"
                       {% if card_product.selected_or_first_available_variant.available == false %}
                         disabled
                       {% endif %}
                     >
-                  </div>
-                  <button
-                    id="{{ product_form_id }}-submit"
-                    type="submit"
-                    name="add"
-                    class="quick-add__submit button button--full-width button--secondary card-checkout-form__submit"
-                    aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
-                    {% if card_product.selected_or_first_available_variant.available == false %}
-                      disabled
-                    {% endif %}
-                  >
-                    {%- if card_product.selected_or_first_available_variant.available -%}
-                      Checkout
-                    {%- else -%}
-                      {{ 'products.product.sold_out' | t }}
-                    {%- endif -%}
-                  </button>
-                </form>
+                    <div class="card-checkout-form__quantity">
+                      <label class="visually-hidden" for="{{ checkout_quantity_id }}">
+                        {{ 'products.product.quantity.label' | t }}
+                      </label>
+                      <input
+                        id="{{ checkout_quantity_id }}"
+                        class="card-checkout-form__quantity-input"
+                        type="number"
+                        name="quantity"
+                        value="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
+                        min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
+                        {% if card_product.selected_or_first_available_variant.quantity_rule.max != null %}
+                          max="{{ card_product.selected_or_first_available_variant.quantity_rule.max }}"
+                        {% endif %}
+                        step="{{ card_product.selected_or_first_available_variant.quantity_rule.increment }}"
+                        inputmode="numeric"
+                        {% if card_product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                    </div>
+                    <button
+                      id="{{ product_form_id }}-submit"
+                      type="submit"
+                      name="add"
+                      class="quick-add__submit button button--full-width button--secondary card-checkout-form__submit"
+                      aria-haspopup="dialog"
+                      aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                      aria-live="polite"
+                      data-sold-out-message="true"
+                      {% if card_product.selected_or_first_available_variant.available == false %}
+                        disabled
+                      {% endif %}
+                    >
+                      <span>
+                        {%- if card_product.selected_or_first_available_variant.available -%}
+                          {{ 'products.product.add_to_cart' | t }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                      </span>
+                      <span class="sold-out-message hidden">
+                        {{ 'products.product.sold_out' | t }}
+                      </span>
+                      {%- render 'loading-spinner' -%}
+                    </button>
+                  {%- endform -%}
+                </product-form>
               {%- endif -%}
             {%- endif -%}
           </div>
