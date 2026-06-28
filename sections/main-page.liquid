@@ -14,12 +14,57 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign page_title = page.title
+  case page.handle
+    when 'help-center'
+      assign page_title = 'Help Center'
+    when 'redeem-voucher'
+      assign page_title = 'Redeem Voucher'
+    when 'policy-rules'
+      assign page_title = 'Policy & Rules'
+    when 'refund-policy'
+      assign page_title = 'Refund Policy'
+  endcase
+-%}
+
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
   <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
+    {{ page_title | escape }}
   </h1>
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+    {%- if page.content != blank -%}
+      {{ page.content }}
+    {%- elsif template.suffix == blank -%}
+      {%- case page.handle -%}
+        {%- when 'help-center' -%}
+          <p>Welcome to the Terea Heets Hub Dubai Help Center. This page explains how to place an order, track support requests, and contact our team for assistance.</p>
+          <p><strong>Ordering support</strong><br>You can place an order directly through our online store. Please review product details, quantities, delivery information, and contact details before checkout. If you need to change or cancel an order, contact us as soon as possible. We can only update an order before it has been prepared or dispatched.</p>
+          <p><strong>Product availability</strong><br>All products are subject to availability. If an item becomes unavailable after you place an order, we will contact you with replacement, backorder, or cancellation options.</p>
+          <p><strong>Shipping options</strong><br>Standard Delivery: AED 25. Free for orders AED 400.00 and up.<br>Express Delivery: AED 30. Free for orders AED 400.00 and up. Estimated delivery time is 1-2 business days.<br>Free Delivery: Available for orders AED 400.00 and up.</p>
+          <p><strong>Contact our team</strong><br>For the fastest support, include your order number, full name, phone number, and a clear description of the issue.</p>
+          <p>Phone/WhatsApp: +971 544 777 918<br>Email: Tereaheetshub@gmail.com<br>Address: Marasi Drive, Business Bay</p>
+        {%- when 'redeem-voucher' -%}
+          <p>Use this page to understand how vouchers, promo codes, store credits, and special offers can be redeemed on Terea Heets Hub Dubai.</p>
+          <p><strong>How to redeem a voucher</strong><br>1. Add eligible products to your cart.<br>2. Enter your voucher or promo code at checkout.<br>3. Confirm that the discount has been applied before completing payment.<br>4. Complete checkout using the available payment method.</p>
+          <p>If a code is not applied before checkout is completed, the discount may not be added after the order is placed.</p>
+          <p><strong>Voucher terms and eligibility</strong><br>Vouchers may be limited to selected products, collections, minimum order values, customer groups, delivery areas, or promotional periods. Some vouchers may exclude sale items, bundles, delivery charges, gift cards, or already discounted products.</p>
+          <p>Only one voucher or promo code may be used per order unless the offer clearly states otherwise. Vouchers are not redeemable for cash and cannot be transferred, resold, exchanged, or combined with other offers without approval.</p>
+          <p>If your voucher is not working, contact us before placing the order. Please send the voucher code, screenshot of the error if available, cart details, and the phone number or email used for checkout.</p>
+        {%- when 'policy-rules' -%}
+          <p>Please review these Policy &amp; Rules before using our website or placing an order. By shopping with Terea Heets Hub Dubai, you agree to follow these store rules and all applicable local laws.</p>
+          <p><strong>Age requirement</strong><br>Some products sold on this website may be age-restricted. You must be 18 years or older, or meet the minimum legal age in your location, whichever is higher. We may request age verification and may refuse or cancel an order if verification is not completed.</p>
+          <p><strong>Orders, pricing, and availability</strong><br>All orders are subject to acceptance, stock availability, payment verification, and delivery availability. Product information, pricing, promotions, and availability may change without prior notice.</p>
+          <p><strong>Shipping rates</strong><br>Standard Delivery is AED 25 and becomes free for orders AED 400.00 and up. Express Delivery is AED 30, estimated at 1-2 business days, and becomes free for orders AED 400.00 and up. Free Delivery is available for orders AED 400.00 and up.</p>
+          <p><strong>Website use</strong><br>You may not misuse the website, attempt unauthorized access, copy content without permission, submit false information, or use the store for unlawful activity.</p>
+        {%- when 'refund-policy' -%}
+          <p>We want every order to arrive correctly and in good condition. Please inspect your order when it is delivered and contact us as soon as possible if something is wrong.</p>
+          <p><strong>Eligible refund or replacement cases</strong><br>Refunds, replacements, or store credit may be available when an item is damaged on arrival, incorrect, missing from the order, expired, or not delivered due to an issue confirmed by our team.</p>
+          <p><strong>Non-refundable items and exceptions</strong><br>For hygiene, safety, and product integrity reasons, opened, used, damaged after delivery, altered, or tampered products are generally not eligible for refund or exchange unless the issue is caused by our fulfillment process or the product is confirmed faulty.</p>
+          <p>Standard Delivery, Express Delivery, and other delivery charges may be non-refundable unless the return, refund, or replacement is required because of our error.</p>
+          <p><strong>Contact</strong><br>Phone/WhatsApp: +971 544 777 918<br>Email: Tereaheetshub@gmail.com</p>
+      {%- endcase -%}
+    {%- endif -%}
   </div>
 </div>
 
