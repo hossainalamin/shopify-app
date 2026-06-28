@@ -390,7 +390,7 @@
   }
 {%- endstyle -%}
 
-{% comment %} {%- javascript -%} {% endcomment %}
+{% comment %} Promo grid behavior is kept inline so it can use the current section id. {% endcomment %}
  <script>
   class SmartPromoGrid {
     constructor(sectionId) {
@@ -457,7 +457,7 @@
   }
   </script>
 
-{% comment %} {%- endjavascript -%} {% endcomment %}
+{% comment %} End promo grid behavior. {% endcomment %}
 
 <div class="smart-promo-grid smart-promo-grid-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="smart-promo-grid__container page-width">
