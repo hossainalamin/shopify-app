@@ -13,19 +13,19 @@
         "support": {
           "type": "text",
           "settings": {
-            "text": "<p>Find quick answers about ordering, delivery, payments, and support for Terea Heets Hub Dubai.</p><p><strong>Order help</strong><br/>For product availability, order changes, or delivery updates, reach our support team by phone, WhatsApp, or email.</p>"
+            "text": "<p>Welcome to the Terea Heets Hub Dubai Help Center. This page explains how to place an order, track support requests, and contact our team for assistance.</p><p><strong>Ordering support</strong><br/>You can place an order directly through our online store. Please review product details, quantities, delivery information, and contact details before checkout. If you need to change or cancel an order, contact us as soon as possible. We can only update an order before it has been prepared or dispatched.</p><p><strong>Product availability</strong><br/>All products are subject to availability. If an item becomes unavailable after you place an order, we will contact you with replacement, backorder, or cancellation options.</p>"
           }
         },
         "delivery": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Delivery support</strong><br/>We offer fast delivery across Dubai, Sharjah, and Ajman. If you need help with an order, contact us with your order details.</p>"
+            "text": "<p><strong>Delivery support</strong><br/>We offer delivery across supported service areas including Dubai, Sharjah, and Ajman. Delivery time estimates may vary based on location, traffic, weather, stock availability, and order volume.</p><p><strong>Payment support</strong><br/>Available payment methods are shown at checkout. If a payment fails, please check your payment details or contact your bank/payment provider. Orders are confirmed only after payment or order verification is completed.</p><p><strong>Age-restricted products</strong><br/>Some products may be age-restricted. By ordering, you confirm that you meet the legal age requirement in your location. We may request verification or refuse service where required.</p>"
           }
         },
         "contact": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Contact</strong><br/>Phone: +971 544 777 918<br/>Email: Tereaheetshub@gmail.com<br/>Address: Marasi Drive, Business Bay</p>"
+            "text": "<p><strong>Contact our team</strong><br/>For the fastest support, include your order number, full name, phone number, and a clear description of the issue.</p><p>Phone/WhatsApp: +971 544 777 918<br/>Email: Tereaheetshub@gmail.com<br/>Address: Marasi Drive, Business Bay</p><p>Support requests are reviewed in the order they are received. Response times may vary during peak hours and promotional periods.</p>"
           }
         }
       },

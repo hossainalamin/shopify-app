@@ -13,19 +13,19 @@
         "eligibility": {
           "type": "text",
           "settings": {
-            "text": "<p>We want every order to arrive correctly and in good condition. Please contact us as soon as possible if there is an issue with your purchase.</p><p><strong>Refund eligibility</strong><br/>Refunds or replacements may be available for damaged, incorrect, or missing items when reported promptly with order details and supporting photos.</p>"
+            "text": "<p>We want every order to arrive correctly and in good condition. Please inspect your order when it is delivered and contact us as soon as possible if something is wrong.</p><p><strong>Eligible refund or replacement cases</strong><br/>Refunds, replacements, or store credit may be available when an item is damaged on arrival, incorrect, missing from the order, expired, or not delivered due to an issue confirmed by our team.</p><p>To help us review your request, please contact us within 24 hours of delivery where possible and provide your order number, phone number, issue details, and clear photos or video if relevant.</p>"
           }
         },
         "exceptions": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Non-refundable items</strong><br/>Opened, used, or tampered products are generally not eligible for refund unless the product is faulty or the issue is caused by our fulfillment process.</p>"
+            "text": "<p><strong>Non-refundable items and exceptions</strong><br/>For hygiene, safety, and product integrity reasons, opened, used, damaged after delivery, altered, or tampered products are generally not eligible for refund or exchange unless the issue is caused by our fulfillment process or the product is confirmed faulty.</p><p>Refunds are not normally available for change of mind, incorrect product selection by the customer, refusal to provide required verification, failed delivery caused by incorrect contact details, or products purchased from another seller.</p><p>Delivery charges may be non-refundable unless the return or replacement is required because of our error.</p>"
           }
         },
         "process": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>How to request help</strong><br/>Contact us with your order number, phone number, issue details, and photos if relevant. Our team will review your request and confirm the next step.</p>"
+            "text": "<p><strong>Refund review process</strong><br/>After we receive your request, our team will review the order information and may ask for additional photos, video, product details, or delivery confirmation. Approved refunds are processed to the original payment method where possible, or as store credit/replacement when appropriate.</p><p>Refund processing times depend on the payment provider and bank. We will confirm the approved solution before processing it.</p><p><strong>Contact</strong><br/>Phone/WhatsApp: +971 544 777 918<br/>Email: Tereaheetshub@gmail.com</p>"
           }
         }
       },

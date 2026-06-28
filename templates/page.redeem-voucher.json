@@ -13,19 +13,19 @@
         "steps": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this page as a guide for redeeming store vouchers, promo codes, and special offers.</p><p><strong>How to redeem a voucher</strong><br/>1. Add eligible products to your cart.<br/>2. Enter your voucher or promo code at checkout.<br/>3. Confirm the discount before completing payment.</p>"
+            "text": "<p>Use this page to understand how vouchers, promo codes, store credits, and special offers can be redeemed on Terea Heets Hub Dubai.</p><p><strong>How to redeem a voucher</strong><br/>1. Add eligible products to your cart.<br/>2. Enter your voucher or promo code at checkout.<br/>3. Confirm that the discount has been applied before completing payment.<br/>4. Complete checkout using the available payment method.</p><p>If a code is not applied before checkout is completed, the discount may not be added after the order is placed.</p>"
           }
         },
         "terms": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Voucher terms</strong><br/>Vouchers may be limited to selected products, order values, or promotional periods. Only one voucher may apply per order unless stated otherwise.</p>"
+            "text": "<p><strong>Voucher terms and eligibility</strong><br/>Vouchers may be limited to selected products, collections, minimum order values, customer groups, delivery areas, or promotional periods. Some vouchers may exclude sale items, bundles, delivery charges, gift cards, or already discounted products.</p><p>Only one voucher or promo code may be used per order unless the offer clearly states otherwise. Vouchers are not redeemable for cash and cannot be transferred, resold, exchanged, or combined with other offers without approval.</p><p>Expired, copied, altered, or unauthorized voucher codes will not be accepted.</p>"
           }
         },
         "support": {
           "type": "text",
           "settings": {
-            "text": "<p>If your voucher is not working, contact us before placing the order so we can check the code and eligibility.</p>"
+            "text": "<p><strong>Voucher issues</strong><br/>If your voucher is not working, contact us before placing the order. Please send the voucher code, screenshot of the error if available, cart details, and the phone number or email used for checkout.</p><p>We reserve the right to cancel or reverse discounts if a voucher is used fraudulently, applied due to a technical error, or used outside the stated offer conditions.</p><p>Promotional offers may be changed, paused, or withdrawn at any time where permitted by applicable law.</p>"
           }
         }
       },

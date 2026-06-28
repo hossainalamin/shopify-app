@@ -13,19 +13,19 @@
         "age": {
           "type": "text",
           "settings": {
-            "text": "<p>Please review our store policies before placing an order. These rules help us provide a clear and reliable shopping experience.</p><p><strong>Age requirement</strong><br/>Customers must meet the legal age requirement for purchasing age-restricted products. We may refuse orders that do not meet this requirement.</p>"
+            "text": "<p>Please review these Policy &amp; Rules before using our website or placing an order. By shopping with Terea Heets Hub Dubai, you agree to follow these store rules and all applicable local laws.</p><p><strong>Age requirement</strong><br/>Some products sold on this website may be age-restricted. You must be 18 years or older, or meet the minimum legal age in your location, whichever is higher. We may request age verification and may refuse or cancel an order if verification is not completed.</p><p><strong>Responsible purchasing</strong><br/>Products must be purchased for lawful personal use only. You are responsible for confirming that the products you order are permitted in your location.</p>"
           }
         },
         "orders": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Orders and availability</strong><br/>Product availability, pricing, and promotions can change without prior notice. If an item becomes unavailable, we will contact you with the available options.</p>"
+            "text": "<p><strong>Orders, pricing, and availability</strong><br/>All orders are subject to acceptance, stock availability, payment verification, and delivery availability. Product information, pricing, promotions, and availability may change without prior notice.</p><p>If an item is unavailable or listed incorrectly, we may contact you to offer a replacement, correct the order, issue a refund, or cancel the affected item. We reserve the right to refuse or cancel orders that appear fraudulent, abusive, unusually large, or in breach of our policies.</p><p><strong>Account and checkout information</strong><br/>You must provide accurate name, phone number, email, address, and delivery instructions. Delays or failed delivery caused by incorrect information are the customer's responsibility.</p>"
           }
         },
         "delivery": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Delivery</strong><br/>Delivery times are estimates and may vary due to location, traffic, weather, or order volume. Please provide accurate contact and delivery details.</p>"
+            "text": "<p><strong>Delivery and receiving orders</strong><br/>Delivery times are estimates and may vary due to location, traffic, weather, stock availability, verification requirements, or order volume. Please be available at the delivery address and reachable by phone.</p><p><strong>Website use</strong><br/>You may not misuse the website, attempt unauthorized access, copy content without permission, submit false information, or use the store for unlawful activity.</p><p><strong>Policy updates</strong><br/>We may update these rules from time to time. The version shown on this page applies when you use the website or place an order.</p>"
           }
         }
       },
