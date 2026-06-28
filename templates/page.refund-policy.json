@@ -19,7 +19,7 @@
         "exceptions": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Non-refundable items and exceptions</strong><br/>For hygiene, safety, and product integrity reasons, opened, used, damaged after delivery, altered, or tampered products are generally not eligible for refund or exchange unless the issue is caused by our fulfillment process or the product is confirmed faulty.</p><p>Refunds are not normally available for change of mind, incorrect product selection by the customer, refusal to provide required verification, failed delivery caused by incorrect contact details, or products purchased from another seller.</p><p>Delivery charges may be non-refundable unless the return or replacement is required because of our error.</p>"
+            "text": "<p><strong>Non-refundable items and exceptions</strong><br/>For hygiene, safety, and product integrity reasons, opened, used, damaged after delivery, altered, or tampered products are generally not eligible for refund or exchange unless the issue is caused by our fulfillment process or the product is confirmed faulty.</p><p>Refunds are not normally available for change of mind, incorrect product selection by the customer, refusal to provide required verification, failed delivery caused by incorrect contact details, or products purchased from another seller.</p><p>Standard Delivery, Express Delivery, and other delivery charges may be non-refundable unless the return, refund, or replacement is required because of our error.</p>"
           }
         },
         "process": {

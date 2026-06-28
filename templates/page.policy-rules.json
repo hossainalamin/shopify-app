@@ -25,7 +25,7 @@
         "delivery": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Delivery and receiving orders</strong><br/>Delivery times are estimates and may vary due to location, traffic, weather, stock availability, verification requirements, or order volume. Please be available at the delivery address and reachable by phone.</p><p><strong>Website use</strong><br/>You may not misuse the website, attempt unauthorized access, copy content without permission, submit false information, or use the store for unlawful activity.</p><p><strong>Policy updates</strong><br/>We may update these rules from time to time. The version shown on this page applies when you use the website or place an order.</p>"
+            "text": "<p><strong>Delivery and receiving orders</strong><br/>Delivery times are estimates and may vary due to location, traffic, weather, stock availability, verification requirements, or order volume. Please be available at the delivery address and reachable by phone.</p><p><strong>Shipping rates</strong><br/>Standard Delivery is AED 25 and becomes free for orders AED 400.00 and up. Express Delivery is AED 30, estimated at 1-2 business days, and becomes free for orders AED 400.00 and up. Free Delivery is available for orders AED 400.00 and up.</p><p><strong>Website use</strong><br/>You may not misuse the website, attempt unauthorized access, copy content without permission, submit false information, or use the store for unlawful activity.</p><p><strong>Policy updates</strong><br/>We may update these rules from time to time. The version shown on this page applies when you use the website or place an order.</p>"
           }
         }
       },
