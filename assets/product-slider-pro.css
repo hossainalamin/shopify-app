@@ -305,8 +305,37 @@
 }
 
 /* Buttons */
+.product-slider-pro-section .product-slider-form {
+  margin-top: auto;
+}
+
 .product-slider-pro-section .add-to-cart-form {
   margin-top: auto;
+}
+
+.product-slider-pro-section .slider-card-checkout {
+  display: grid;
+  grid-template-columns: minmax(12rem, 14rem) minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.product-slider-pro-section .slider-card-checkout__quantity {
+  width: 100%;
+  min-height: 4.4rem;
+  background: rgb(var(--color-background));
+}
+
+.product-slider-pro-section .slider-card-checkout__quantity-input {
+  min-width: 0;
+}
+
+.product-slider-pro-section .slider-card-checkout__quantity-button {
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+.product-slider-pro-section .slider-card-checkout__quantity-button:not([disabled]):hover {
+  background-color: rgba(var(--color-foreground), 0.08);
 }
 
 .product-slider-pro-section .add-to-cart-btn {
@@ -324,13 +353,48 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 4.4rem;
+  position: relative;
 }
 
-.product-slider-pro-section .add-to-cart-btn:hover {
+.product-slider-pro-section .add-to-cart-btn:not([disabled]):hover {
   background: var(--button-hover-bg);
   color: var(--button-hover-text);
   border-color: var(--button-hover-bg);
   transform: translateY(-1px);
+}
+
+.product-slider-pro-section .add-to-cart-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.product-slider-pro-section .add-to-cart-btn.loading {
+  color: transparent;
+}
+
+.product-slider-pro-section .add-to-cart-btn .loading__spinner {
+  position: absolute;
+}
+
+.product-slider-pro-section .product-form__error-message-wrapper {
+  align-items: flex-start;
+  color: rgb(var(--color-error));
+  display: flex;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-top: 0.8rem;
+}
+
+.product-slider-pro-section .product-form__error-message-wrapper[hidden] {
+  display: none;
+}
+
+.product-slider-pro-section .product-form__error-message-wrapper .svg-wrapper {
+  flex-shrink: 0;
+  height: 1.4rem !important;
+  margin-right: 0.5rem;
+  width: 1.4rem !important;
 }
 
 .product-slider-pro-section .quick-view-btn {
@@ -480,5 +544,9 @@
   .product-slider-pro-section .add-to-cart-btn,
   .product-slider-pro-section .quick-view-btn {
     padding: 10px 16px;
+  }
+
+  .product-slider-pro-section .slider-card-checkout {
+    grid-template-columns: 1fr;
   }
 }

@@ -404,16 +404,32 @@
                         disabled
                       {% endif %}
                     >
-                    <div class="card-checkout-form__quantity">
+                    <quantity-input class="quantity card-checkout-form__quantity card-checkout-form__quantity-selector">
                       <label class="visually-hidden" for="{{ checkout_quantity_id }}">
                         {{ 'products.product.quantity.label' | t }}
                       </label>
+                      <button
+                        class="quantity__button card-checkout-form__quantity-button"
+                        name="minus"
+                        type="button"
+                        {% if card_product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span class="visually-hidden">
+                          {{- 'products.product.quantity.decrease' | t: product: card_product.title | escape -}}
+                        </span>
+                        <span class="svg-wrapper">
+                          {{- 'icon-minus.svg' | inline_asset_content -}}
+                        </span>
+                      </button>
                       <input
                         id="{{ checkout_quantity_id }}"
-                        class="card-checkout-form__quantity-input"
+                        class="quantity__input card-checkout-form__quantity-input"
                         type="number"
                         name="quantity"
                         value="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
+                        data-min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
                         min="{{ card_product.selected_or_first_available_variant.quantity_rule.min }}"
                         {% if card_product.selected_or_first_available_variant.quantity_rule.max != null %}
                           max="{{ card_product.selected_or_first_available_variant.quantity_rule.max }}"
@@ -424,7 +440,22 @@
                           disabled
                         {% endif %}
                       >
-                    </div>
+                      <button
+                        class="quantity__button card-checkout-form__quantity-button"
+                        name="plus"
+                        type="button"
+                        {% if card_product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        <span class="visually-hidden">
+                          {{- 'products.product.quantity.increase' | t: product: card_product.title | escape -}}
+                        </span>
+                        <span class="svg-wrapper">
+                          {{- 'icon-plus.svg' | inline_asset_content -}}
+                        </span>
+                      </button>
+                    </quantity-input>
                     <button
                       id="{{ product_form_id }}-submit"
                       type="submit"
