@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "content": {
+      "type": "rich-text",
+      "blocks": {
+        "steps": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this page as a guide for redeeming store vouchers, promo codes, and special offers.</p><p><strong>How to redeem a voucher</strong><br/>1. Add eligible products to your cart.<br/>2. Enter your voucher or promo code at checkout.<br/>3. Confirm the discount before completing payment.</p>"
+          }
+        },
+        "terms": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Voucher terms</strong><br/>Vouchers may be limited to selected products, order values, or promotional periods. Only one voucher may apply per order unless stated otherwise.</p>"
+          }
+        },
+        "support": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If your voucher is not working, contact us before placing the order so we can check the code and eligibility.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "steps",
+        "terms",
+        "support"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 12,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content"
+  ]
+}

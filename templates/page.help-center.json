@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "content": {
+      "type": "rich-text",
+      "blocks": {
+        "support": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Find quick answers about ordering, delivery, payments, and support for Terea Heets Hub Dubai.</p><p><strong>Order help</strong><br/>For product availability, order changes, or delivery updates, reach our support team by phone, WhatsApp, or email.</p>"
+          }
+        },
+        "delivery": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Delivery support</strong><br/>We offer fast delivery across Dubai, Sharjah, and Ajman. If you need help with an order, contact us with your order details.</p>"
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Contact</strong><br/>Phone: +971 544 777 918<br/>Email: Tereaheetshub@gmail.com<br/>Address: Marasi Drive, Business Bay</p>"
+          }
+        }
+      },
+      "block_order": [
+        "support",
+        "delivery",
+        "contact"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 12,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content"
+  ]
+}

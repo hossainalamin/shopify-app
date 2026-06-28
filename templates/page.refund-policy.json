@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "content": {
+      "type": "rich-text",
+      "blocks": {
+        "eligibility": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We want every order to arrive correctly and in good condition. Please contact us as soon as possible if there is an issue with your purchase.</p><p><strong>Refund eligibility</strong><br/>Refunds or replacements may be available for damaged, incorrect, or missing items when reported promptly with order details and supporting photos.</p>"
+          }
+        },
+        "exceptions": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Non-refundable items</strong><br/>Opened, used, or tampered products are generally not eligible for refund unless the product is faulty or the issue is caused by our fulfillment process.</p>"
+          }
+        },
+        "process": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>How to request help</strong><br/>Contact us with your order number, phone number, issue details, and photos if relevant. Our team will review your request and confirm the next step.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "eligibility",
+        "exceptions",
+        "process"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 12,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content"
+  ]
+}
