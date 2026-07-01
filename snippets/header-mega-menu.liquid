@@ -10,7 +10,7 @@
     assign terea_guide_menu_exists = false
     for link in section.settings.menu.links
       assign link_title = link.title | downcase
-      if link.url contains '/pages/terea-guide' or link_title == 'terea guide'
+      if link.url contains '/blogs/news' or link_title == 'terea guide'
         assign terea_guide_menu_exists = true
       endif
     endfor
@@ -22,7 +22,7 @@
           assign menu_link_url = link.url
           assign menu_link_title = link.title | downcase
           if menu_link_title == 'terea guide'
-            assign menu_link_url = '/pages/terea-guide'
+            assign menu_link_url = '/blogs/news'
           endif
         -%}
         {%- if link.links != blank -%}
@@ -110,14 +110,14 @@
       <li>
         <a
           id="HeaderMenu-terea-guide"
-          href="/pages/terea-guide"
+          href="/blogs/news"
           class="header__menu-item list-menu__item link link--text focus-inset"
-          {% if request.path contains '/pages/terea-guide' %}
+          {% if request.path contains '/blogs/news' %}
             aria-current="page"
           {% endif %}
         >
           <span
-            {%- if request.path contains '/pages/terea-guide' %}
+            {%- if request.path contains '/blogs/news' %}
               class="header__active-menu-item"
             {% endif %}
           >
