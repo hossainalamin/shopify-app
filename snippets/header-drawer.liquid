@@ -32,12 +32,19 @@
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
+                  {%- liquid
+                    assign menu_link_url = link.url
+                    assign menu_link_title = link.title | downcase
+                    if menu_link_title == 'terea guide'
+                      assign menu_link_url = '/pages/terea-guide'
+                    endif
+                  -%}
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                        data-url="{{ link.url }}"
+                        data-url="{{ menu_link_url }}"
                       >
                         {{ link.title | escape }}
                         <span class="svg-wrapper">
@@ -132,7 +139,7 @@
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
+                      href="{{ menu_link_url }}"
                       class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
                       {% if link.current %}
                         aria-current="page"
