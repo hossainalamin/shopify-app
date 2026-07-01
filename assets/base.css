@@ -3718,37 +3718,13 @@ details-disclosure > details {
 #HeaderDrawer-home, #HeaderDrawer-terea
 , #HeaderDrawer-iqos-iluma, #HeaderDrawer-juul-pods
 , #HeaderDrawer-relx-pods,#HeaderDrawer-disposable-vape
-,#HeaderDrawer-nicotine-pods,#HeaderDrawer-cigarette,#HeaderDrawer-contact {
-  font-weight: bold; !important
+,#HeaderDrawer-nicotine-pods,#HeaderDrawer-cigarette,#HeaderDrawer-contact,
+#HeaderDrawer-terea-guide,
+#HeaderMenu-terea-guide,
+#HeaderMenu-terea-guide span {
+  font-weight: bold !important;
 }
 .svg-wrapper {
     width: 30px !important;
     height: 19px !important;
-}
-
-.quantity .quantity__button .svg-wrapper {
-  display: inline-flex !important;
-  width: 1.2rem !important;
-  height: 1.2rem !important;
-}
-
-.quantity .quantity__button .svg-wrapper > svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.cart-quantity .quantity__button {
-  background-color: rgba(var(--color-foreground), 0.04);
-  color: rgb(var(--color-foreground));
-  opacity: 1;
-}
-
-.cart-quantity .quantity__button:not([disabled]):hover {
-  background-color: rgba(var(--color-foreground), 0.08);
-}
-
-.cart-quantity .quantity__button[disabled] {
-  cursor: not-allowed;
-  opacity: 0.45;
 }
