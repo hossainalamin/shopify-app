@@ -186,7 +186,32 @@
 
 .article-template__content ul,
 .article-template__content ol {
-  padding-left: 2.4rem;
+  margin: 1.6rem 0 2rem;
+  padding-left: 2.8rem;
+  list-style-position: outside;
+}
+
+.article-template__content li {
+  display: list-item;
+  margin-bottom: 1rem;
+  padding-left: 0.4rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.article-template__content li::marker {
+  color: rgba(var(--color-foreground), 0.72);
+  font-weight: 700;
+}
+
+.article-template__content li > p {
+  display: inline;
+  margin: 0;
+}
+
+.article-template__content li > p + p {
+  display: block;
+  margin-top: 0.8rem;
 }
 
 .article-template__content a {
@@ -298,5 +323,14 @@
   .article-template__content li {
     font-size: 1.55rem;
     line-height: 1.78;
+  }
+
+  .article-template__content ul,
+  .article-template__content ol {
+    padding-left: 2.2rem;
+  }
+
+  .article-template__content li {
+    padding-left: 0.2rem;
   }
 }
