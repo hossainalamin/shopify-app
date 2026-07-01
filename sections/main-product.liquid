@@ -221,9 +221,46 @@
                       </div>
                       {{- 'icon-caret.svg' | inline_asset_content -}}
                     </summary>
-                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {{ block.settings.content }}
-                      {{ block.settings.page.content }}
+                    <div
+                      class="accordion__content rte{% if block.settings.heading == 'Product Details' %} product-details-richtext{% endif %}"
+                      id="ProductAccordion-{{ block.id }}-{{ section.id }}"
+                    >
+                      {%- liquid
+                        assign product_details_metafield = blank
+                        assign content_uses_product_details_source = false
+                        if block.settings.heading == 'Product Details'
+                          if block.settings.content contains 'product.metafields.custom.product_details'
+                            assign content_uses_product_details_source = true
+                          endif
+                          assign product_details_metafield = product.metafields.custom.product_details
+                          if product_details_metafield == blank
+                            assign product_details_metafield = product.metafields.custom.products_details
+                          endif
+                          if product_details_metafield == blank
+                            assign product_details_metafield = product.metafields.custom.product_detail
+                          endif
+                          if product_details_metafield == blank
+                            assign product_details_metafield = product.metafields.custom.products_detail
+                          endif
+                          if product_details_metafield == blank
+                            assign product_details_metafield = product.metafields.custom.product_details_rich
+                          endif
+                        endif
+                      -%}
+                      {%- if product_details_metafield != blank -%}
+                        {{ product_details_metafield | metafield_tag }}
+                      {%- elsif block.settings.heading == 'Product Details'
+                        and block.settings.page.content == blank
+                      -%}
+                        {%- if block.settings.content == blank or content_uses_product_details_source -%}
+                          {% render 'seo-product-details', product: product %}
+                        {%- else -%}
+                          {{ block.settings.content }}
+                        {%- endif -%}
+                      {%- else -%}
+                        {{ block.settings.content }}
+                        {{ block.settings.page.content }}
+                      {%- endif -%}
                     </div>
                   </details>
                 </div>

@@ -1,0 +1,129 @@
+{%- liquid
+  assign product_title = product.title | downcase
+  assign product_type = product.type | downcase
+  assign product_vendor = product.vendor | downcase
+  assign product_context = product_title | append: ' ' | append: product_type | append: ' ' | append: product_vendor
+
+  assign is_terea = false
+  assign is_iqos = false
+  assign is_cigarette = false
+  assign is_accessory = false
+
+  if product_context contains 'terea'
+    assign is_terea = true
+  endif
+
+  if product_context contains 'iqos' or product_context contains 'iluma'
+    assign is_iqos = true
+  endif
+
+  if product_context contains 'cigarette' or product_context contains 'marlboro' or product_context contains 'winston' or product_context contains 'parliament' or product_context contains 'heets' or product_context contains 'tobacco'
+    assign is_cigarette = true
+  endif
+
+  if product_context contains 'lighter' or product_context contains 'ashtray' or product_context contains 'case' or product_context contains 'filter' or product_context contains 'accessor'
+    assign is_accessory = true
+  endif
+
+  assign flavor_profile = ''
+  if product_title contains 'amber'
+    assign flavor_profile = 'a warm, nutty tobacco profile with a balanced classic taste'
+  elsif product_title contains 'silver'
+    assign flavor_profile = 'a lighter herbal-style tobacco profile with a clean, refined finish'
+  elsif product_title contains 'blue'
+    assign flavor_profile = 'a minty profile with fresh cooling notes'
+  elsif product_title contains 'sienna'
+    assign flavor_profile = 'a balanced woody tobacco profile with smooth aroma'
+  elsif product_title contains 'bronze'
+    assign flavor_profile = 'a rich and warm tobacco profile with deeper flavor notes'
+  elsif product_title contains 'teak'
+    assign flavor_profile = 'a nutty, full-bodied tobacco profile'
+  elsif product_title contains 'yellow'
+    assign flavor_profile = 'a zesty aromatic profile with a bright finish'
+  elsif product_title contains 'turquoise'
+    assign flavor_profile = 'a refreshing menthol profile with zesty cooling notes'
+  elsif product_title contains 'purple'
+    assign flavor_profile = 'a cooling menthol profile with forest berry notes'
+  elsif product_title contains 'summer breeze'
+    assign flavor_profile = 'a smooth aromatic profile with stone fruit notes'
+  endif
+-%}
+
+{%- if is_terea -%}
+  <h3>{{ product.title | escape }} in Dubai, UAE</h3>
+  <p>
+    {{ product.title | escape }} is an original TEREA tobacco stick option for adult IQOS ILUMA users in Dubai and across the UAE.
+    {%- if flavor_profile != blank -%}
+      It offers {{ flavor_profile }}.
+    {%- else -%}
+      It is designed for adult users looking for a consistent heated tobacco experience.
+    {%- endif -%}
+  </p>
+  <ul>
+    <li>Made for IQOS ILUMA and IQOS ILUMA i devices only.</li>
+    <li>Each standard TEREA pack contains 20 SMARTCORE sticks.</li>
+    <li>Suitable for adult smokers and nicotine users aged 18+ only.</li>
+    <li>Available for customers looking for original TEREA in Dubai and the UAE.</li>
+  </ul>
+  <p>
+    Do not use TEREA sticks with older IQOS ORIGINALS devices, as they are designed specifically for the IQOS ILUMA system.
+    This product contains nicotine, which is addictive, and is not risk-free.
+  </p>
+{%- elsif is_iqos -%}
+  <h3>{{ product.title | escape }} in Dubai, UAE</h3>
+  <p>
+    {{ product.title | escape }} is an IQOS device option for adult heated tobacco users in Dubai and the UAE.
+    It is designed for use with compatible TEREA SMARTCORE sticks and supports a clean, modern device experience for adult IQOS users.
+  </p>
+  <ul>
+    <li>Designed for compatible IQOS heated tobacco consumables.</li>
+    <li>Suitable for adult smokers and nicotine users aged 18+ only.</li>
+    <li>Portable device option for daily use in Dubai and across the UAE.</li>
+    <li>Pair only with the correct compatible sticks listed for your device model.</li>
+  </ul>
+  <p>
+    This product is intended for adults only. Nicotine products are addictive and not risk-free.
+  </p>
+{%- elsif is_accessory -%}
+  <h3>{{ product.title | escape }} in Dubai, UAE</h3>
+  <p>
+    {{ product.title | escape }} is a practical cigarette and tobacco accessory for adult customers in Dubai and across the UAE.
+    It is selected for everyday convenience, storage, or smoking-related use.
+  </p>
+  <ul>
+    <li>Useful accessory for adult tobacco users.</li>
+    <li>Suitable for personal use or replacement needs.</li>
+    <li>Available for customers looking for cigarette accessories in Dubai and the UAE.</li>
+  </ul>
+  <p>
+    Tobacco and nicotine-related products are for adults aged 18+ only. Keep all smoking products and accessories away from children.
+  </p>
+{%- elsif is_cigarette -%}
+  <h3>{{ product.title | escape }} in Dubai, UAE</h3>
+  <p>
+    {{ product.title | escape }} is available for adult tobacco customers in Dubai and across the UAE.
+    It is listed for adult smokers aged 18+ who are looking for cigarette and tobacco products with clear product information and local UAE availability.
+  </p>
+  <ul>
+    <li>For adult smokers aged 18+ only.</li>
+    <li>Check the product title, variant, pack size, and availability before ordering.</li>
+    <li>Available for customers searching for cigarette products in Dubai and the UAE.</li>
+  </ul>
+  <p>
+    Tobacco products are addictive and not risk-free. Not intended for minors, pregnant women, non-smokers, or anyone advised to avoid nicotine.
+  </p>
+{%- else -%}
+  <h3>{{ product.title | escape }} in Dubai, UAE</h3>
+  <p>
+    {{ product.title | escape }} is available for adult customers looking for tobacco, IQOS, TEREA, and cigarette-related products in Dubai and across the UAE.
+    Product availability, flavor, packaging, and compatibility may vary by item.
+  </p>
+  <ul>
+    <li>For adult customers aged 18+ only.</li>
+    <li>Check the product title, variant, and compatibility before ordering.</li>
+    <li>Suitable for customers searching for tobacco-related products in Dubai and the UAE.</li>
+  </ul>
+  <p>
+    Nicotine is addictive. Tobacco and nicotine products are not risk-free and are not intended for minors, pregnant women, non-smokers, or anyone advised to avoid nicotine.
+  </p>
+{%- endif -%}
