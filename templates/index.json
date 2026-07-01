@@ -1,1 +1,889 @@
-{"sections":{"image_banner_N3PtLz":{"type":"image-banner","blocks":{"heading_NXTbqP":{"type":"heading","settings":{"heading":"Premium Terea Heets Hub Dubai","heading_size":"h1"}},"text_fY4m8Y":{"type":"text","settings":{"text":"Your Trusted Destination for Authentic Terea Heets","text_style":"body"}},"buttons_EnHppz":{"type":"buttons","settings":{"button_label_1":"Shop Now","button_link_1":"shopify:\/\/collections","button_style_secondary_1":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_NXTbqP","text_fY4m8Y","buttons_EnHppz"],"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/vape.jpg","image_overlay_opacity":0,"image_height":"small","image_behavior":"none","desktop_content_position":"bottom-right","desktop_content_alignment":"right","show_text_box":true,"color_scheme":"scheme-4","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":false}},"animated_promo_grid_t93Tch":{"type":"animated-promo-grid","blocks":{"promo_card_iebrRb":{"type":"promo_card","settings":{"image":"shopify:\/\/shop_images\/C1.jpg","badge":"ONLY FOR TEREA","title":"TEREA KAZAKHSTAN","subtitle":"Experience premium quality","button_text":"Buy Now","button_style":"outline","link_type":"collection","product":"","collection":"iluma-i-one","page":"","custom_url":"","overlay_color":"#000000","overlay_opacity":40}},"promo_card_xMikKi":{"type":"promo_card","settings":{"image":"shopify:\/\/shop_images\/download_1_90e82b07-67b7-4fc6-ac74-b62fefb25a12.png","badge":"NEW","title":"TEREA INDONESIAN","subtitle":"Special edition flavors","button_text":"Shop Now","button_style":"filled","link_type":"collection","product":"","collection":"","page":"","custom_url":"","overlay_color":"#000000","overlay_opacity":40}},"promo_card_AmiYFp":{"type":"promo_card","settings":{"image":"shopify:\/\/shop_images\/download_1_90e82b07-67b7-4fc6-ac74-b62fefb25a12.png","badge":"NEW","title":"Collection Title","subtitle":"Short description or tagline for this collection","button_text":"Shop Now","button_style":"filled","link_type":"collection","product":"","collection":"","page":"","custom_url":"","overlay_color":"#000000","overlay_opacity":40}}},"block_order":["promo_card_iebrRb","promo_card_xMikKi","promo_card_AmiYFp"],"disabled":true,"name":"Animated Promo Grid","settings":{"heading":"","heading_size":2.5,"content_alignment":"left","background_color":"","background_gradient":"","padding_top":32,"padding_bottom":0,"grid_gap":24,"rounded_cards":true,"rounded_buttons":true,"overlay_opacity":60,"content_bg_opacity":80,"main_min_height":500,"small_min_height":250,"horizontal_min_height":200,"button_color":"#ffffff","button_text_color":"#000000","badge_color":"#ffffff","badge_text_color":"#000000"}},"rich_text_qTd387":{"type":"rich-text","blocks":{"heading_6NxT3V":{"type":"heading","settings":{"heading":"<strong>BROWSE BY CATEGORIES<\/strong>","heading_size":"h1"}}},"block_order":["heading_6NxT3V"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":52,"padding_bottom":32}},"browse_by_categories_MfFMGB":{"type":"browse-by-categories","blocks":{"category_ayTaGP":{"type":"category","name":"Cigarette","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_8.15.11_PM.jpg","category_title":"Cigarette","category_link":"shopify:\/\/collections\/cigarette"}},"category_pqpWcW":{"type":"category","name":"Terea Indonesia","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.51.22_PM.jpg","category_title":"Terea Indonesia","category_link":"shopify:\/\/collections\/terea-indonesia"}},"category_haLj4B":{"type":"category","name":"TEREA KAZAKHSTAN","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.50.46_PM.jpg","category_title":"TEREA KAZAKHSTAN","category_link":"shopify:\/\/collections\/terea-kazakhstan-uzbekistan"}},"category_MKRKmb":{"type":"category","name":"TEREA ITALY","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.52.20_PM.jpg","category_title":"TEREA ITALY","category_link":"shopify:\/\/collections\/terea-italy"}},"category_z4NA7E":{"type":"category","name":"Terea Swiss","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.52.39_PM.jpg","category_title":"Terea Swiss","category_link":"shopify:\/\/collections\/terea-swiss"}},"category_a9BPhj":{"type":"category","name":"TEREA JAPAN","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.51.47_PM.jpg","category_title":"TEREA JAPAN","category_link":"shopify:\/\/collections\/terea-japan"}},"category_78GKqK":{"type":"category","name":"IQOS ILUMA i Standard","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_6.13.20_AM.jpg","category_title":"IQOS ILUMA i Standard","category_link":"shopify:\/\/collections\/iqos-iluma-standard"}},"category_xGzPLP":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_6.35.46_AM.jpg","category_title":"IQOS ILUMA i ONE","category_link":"shopify:\/\/collections\/iqos-iluma-one"}},"category_jKeF3D":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_6.37.45_AM.jpg","category_title":"IQOS ILUMA i PRIME","category_link":"shopify:\/\/collections\/iqos-iluma-i-prime"}},"category_N6r3iT":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_12.56.00_PM_1.jpg","category_title":"RELX DEVICE","category_link":"shopify:\/\/collections\/relx-devices"}},"category_i7iYaa":{"type":"category","name":"JUUL","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_5.39.58_AM.jpg","category_title":"Juul Pods & Device","category_link":"shopify:\/\/collections\/juul-pods"}},"category_HYrCdD":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/Nicotine_pods_b07b473d-ecd3-4d97-8c45-5cfe4bbfc48f.png","category_title":"Nicotine Pods","category_link":"shopify:\/\/collections\/velo-nicotine-pouches"}},"category_JPHQMr":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_12.56.29_PM.jpg","category_title":"Waka SoPro","category_link":"shopify:\/\/collections\/waka-sopro-pa10000-puffs"}},"category_YziRGh":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_7.50.09_PM.jpg","category_title":"MYLE","category_link":"shopify:\/\/collections\/myle"}},"category_AtMaGz":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_4.31.52_AM.jpg","category_title":"Relx single Pods","category_link":"shopify:\/\/collections\/relx-pod-pro-2"}},"category_C4frYG":{"type":"category","settings":{"category_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-03-10_at_4.31.16_AM.jpg","category_title":"Relx double pods","category_link":"shopify:\/\/collections\/relx-pod-pro"}}},"block_order":["category_ayTaGP","category_pqpWcW","category_haLj4B","category_MKRKmb","category_z4NA7E","category_a9BPhj","category_78GKqK","category_xGzPLP","category_jKeF3D","category_N6r3iT","category_i7iYaa","category_HYrCdD","category_JPHQMr","category_YziRGh","category_AtMaGz","category_C4frYG"],"name":"Browse Categories","settings":{"section_heading":"","heading_font_size":32,"heading_color":"#222222","heading_position":"center","box_font_size":16,"box_text_color":"#333333","box_hover_text_color":"#ffffff","box_bg_color":"#f1e9e9","box_hover_bg_color":"#152746","box_border_color":"#333333","box_border_width":0,"box_border_radius":5}},"image_banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Browse our latest products","heading_size":"h0"}},"button":{"type":"buttons","settings":{"button_label_1":"Shop all","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading","button"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/TEREA9.jpg","image_2":"shopify:\/\/shop_images\/TEREA_2.jpg","image_overlay_opacity":40,"image_height":"small","image_behavior":"ambient","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-3","stack_images_on_mobile":false,"mobile_content_alignment":"center","show_text_below":false}},"rich_text_RVP7RL":{"type":"rich-text","blocks":{"heading_LgHqxM":{"type":"heading","settings":{"heading":"<strong>BEST OF THE WEEK<\/strong>","heading_size":"h1"}}},"block_order":["heading_LgHqxM"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":52,"padding_bottom":52}},"product_slider_B8VBwi":{"type":"product-slider","custom_css":["section#product-slider-template--20055892623528__product_slider_B8VBwi {padding: 0; margin: 0;}"],"name":"Product Slider","settings":{"title":"","subtitle":"","text_alignment":"left","title_font_size":44,"title_font_weight":700,"show_lines":true,"line_color_before":"#000000","line_color_after":"#2563eb","line_width":60,"line_height":4.5,"collection":"juul-single-pods","product_limit":24,"slides_per_view":4,"spacing":10,"loop":true,"autoplay":true,"autoplay_speed":9000,"show_arrows":true,"show_dots":true,"draggable":true,"card_radius":12,"image_aspect_ratio":1,"show_hover_image":true,"show_sale_badge":true,"sale_badge_text":"Sale","show_new_badge":true,"new_badge_text":"New","new_product_days":7,"show_vendor":true,"show_rating":true,"price_font_size":20,"show_add_to_cart":true,"show_cart_icon":true,"add_to_cart_text":"Add to Cart","show_quick_view":false,"quick_view_text":"Quick View","button_font_size":14,"button_radius":8,"slider_bg_color":"#ffffff","card_bg_color":"#f8fafc","text_primary_color":"#1a1a1a","text_secondary_color":"#666666","accent_color":"#2563eb","border_color":"#e2e8f0","sale_color":"#eb2563","arrow_color":"#000000","dot_color":"#cbd5e1","dot_active_color":"#ffe400","button_bg_color":"#1a1a1a","button_text_color":"#ffffff","button_hover_bg_color":"#334fb4","button_hover_text_color":"#ffffff"}},"rich_text_gPEXdr":{"type":"rich-text","blocks":{"heading_faQRej":{"type":"heading","settings":{"heading":"<strong>EDITOR’S PICKS<\/strong>","heading_size":"h1"}}},"block_order":["heading_faQRej"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":72,"padding_bottom":52}},"product_slider_BUmRQj":{"type":"product-slider","custom_css":["#product-slider-template--20055892623528__product_slider_BUmRQj {padding: 0; margin: 0;}"],"name":"Product Slider","settings":{"title":"","subtitle":"","text_alignment":"left","title_font_size":44,"title_font_weight":700,"show_lines":true,"line_color_before":"#000000","line_color_after":"#2563eb","line_width":60,"line_height":4.5,"collection":"relx-pod-pro-2","product_limit":24,"slides_per_view":4,"spacing":10,"loop":true,"autoplay":true,"autoplay_speed":9000,"show_arrows":true,"show_dots":true,"draggable":true,"card_radius":12,"image_aspect_ratio":1,"show_hover_image":true,"show_sale_badge":true,"sale_badge_text":"Sale","show_new_badge":true,"new_badge_text":"New","new_product_days":7,"show_vendor":true,"show_rating":true,"price_font_size":20,"show_add_to_cart":true,"show_cart_icon":true,"add_to_cart_text":"Add to Cart","show_quick_view":false,"quick_view_text":"Quick View","button_font_size":14,"button_radius":8,"slider_bg_color":"#ffffff","card_bg_color":"#f8fafc","text_primary_color":"#1a1a1a","text_secondary_color":"#666666","accent_color":"#2563eb","border_color":"#e2e8f0","sale_color":"#eb2563","arrow_color":"#000000","dot_color":"#cbd5e1","dot_active_color":"#ffe400","button_bg_color":"#1a1a1a","button_text_color":"#ffffff","button_hover_bg_color":"#334fb4","button_hover_text_color":"#ffffff"}},"product_reviews_7BYYdG":{"type":"product-reviews","blocks":{"review_mX3VNh":{"type":"review","settings":{"rating":5,"text":"<p>Device has completely transformed my vaping experience. The performance is exceptional, delivering intense flavor and massive clouds with every puff. The customizable options allow me to fine-tune my settings to perfection.<\/p>","name":"— Alvin Johnson","location":"","avatar":"shopify:\/\/shop_images\/download_13.png"}},"review_Cpz48Y":{"type":"review","settings":{"rating":5,"text":"<p>Device has completely transformed my vaping experience. The performance is exceptional, delivering intense flavor and massive clouds with every puff. The customizable options allow me to fine-tune my settings to perfection.<\/p>","name":"— Alex Fudge","location":"","avatar":"shopify:\/\/shop_images\/download_14.png"}},"review_VgRd7n":{"type":"review","settings":{"rating":5,"text":"<p>I've tried many different vaping devices, but the smoke GPric18 has become my favorite. The flavor it produces is rich and intense, and the clouds it generates are dense and satisfying. The device is simple to use, making it perfect for vapers of all...<\/p>","name":"— Glenda Sandlin","location":"","avatar":"shopify:\/\/shop_images\/download_15.png"}},"review_8Bj74F":{"type":"review","settings":{"rating":5,"text":"<p>This product exceeded my expectations! The quality is amazing and it arrived quickly. I would definitely recommend this to anyone looking for a reliable solution.<\/p>","name":"— Linda","location":"","avatar":"shopify:\/\/shop_images\/download_16.png"}}},"block_order":["review_mX3VNh","review_Cpz48Y","review_VgRd7n","review_8Bj74F"],"name":"Product Reviews","settings":{"title":"Hear What Customers Are Saying","subtitle":"Product Reviews","layout":"slider","show_arrows":true,"show_pagination":true,"autoplay":true,"autoplay_speed":4000,"slides_desktop":3,"slides_tablet":2,"slides_mobile":1,"show_avatar":true,"title_font":"sans_serif_n4","text_font":"sans_serif_n4","background_color":"#f9f9f9","text_color":"#333333","subtitle_color":"#666666","card_background":"#ffffff","card_text_color":"#333333","star_color":"#ffd700","accent_color":"#4f46e5","show_button":false,"button_text":"View All Reviews","button_link":""}},"image_banner_FwgKDC":{"type":"image-banner","blocks":{"heading_PKDVdE":{"type":"heading","settings":{"heading":"The benefit vaping with smoking","heading_size":"h1"}},"text_MEFKzB":{"type":"text","settings":{"text":"Vaping has gained significant popularity as a safer alternative to traditional smoke, it offers several benefits for individuals looking to make a switch. One of the primary advantages of vaping is the reduced exposure to harmful chemicals","text_style":"body"}},"buttons_wGw4bJ":{"type":"buttons","settings":{"button_label_1":"Shop now","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_PKDVdE","text_MEFKzB","buttons_wGw4bJ"],"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/vape_banner.jpg","image_overlay_opacity":30,"image_height":"medium","image_behavior":"ambient","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-4","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":true}},"newsletter_XBMcGU":{"type":"newsletter","blocks":{"heading_RTVwQQ":{"type":"heading","settings":{"heading":"Subscribe to our emails","heading_size":"h1"}},"paragraph_B6tKYz":{"type":"paragraph","settings":{"text":"<p>Be the first to know about new collections and exclusive offers.<\/p>"}},"email_form_cF9VG9":{"type":"email_form","settings":{}}},"block_order":["heading_RTVwQQ","paragraph_B6tKYz","email_form_cF9VG9"],"disabled":true,"name":"t:sections.newsletter.presets.name","settings":{"color_scheme":"scheme-4","full_width":true,"padding_top":40,"padding_bottom":52}},"rich_text_zY7PKr":{"type":"rich-text","blocks":{"heading_gfTVFE":{"type":"heading","settings":{"heading":"<strong>Top Rated<\/strong>","heading_size":"h1"}}},"block_order":["heading_gfTVFE"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":72,"padding_bottom":0}},"product_slider_GwWGXk":{"type":"product-slider","name":"Product Slider Pro","settings":{"title":"","subtitle":"","text_alignment":"center","title_font_size":32,"title_font_weight":700,"show_lines":true,"line_color_before":"#2563eb","line_color_after":"#dc2626","line_width":60,"line_height":2,"collection":"iqos-iluma-prime","product_limit":8,"slides_per_view":4,"spacing":20,"loop":true,"autoplay":true,"autoplay_speed":4000,"show_arrows":true,"show_dots":true,"draggable":true,"card_radius":12,"image_aspect_ratio":1,"show_hover_image":true,"show_sale_badge":true,"sale_badge_text":"Sale","show_new_badge":true,"new_badge_text":"New","new_product_days":7,"show_vendor":true,"show_rating":true,"price_font_size":20,"show_add_to_cart":true,"show_cart_icon":true,"add_to_cart_text":"Add to Cart","show_quick_view":false,"quick_view_text":"Quick View","button_font_size":14,"button_radius":8,"slider_bg_color":"#ffffff","card_bg_color":"#f8fafc","text_primary_color":"#1a1a1a","text_secondary_color":"#666666","accent_color":"#2563eb","border_color":"#e2e8f0","sale_color":"#dc2626","arrow_color":"#1a1a1a","dot_color":"#cbd5e1","dot_active_color":"#2563eb","button_bg_color":"#1a1a1a","button_text_color":"#ffffff","button_hover_bg_color":"#2563eb","button_hover_text_color":"#ffffff"}},"shop_features_T6DkDz":{"type":"shop-features","blocks":{"feature_7LrHhJ":{"type":"feature","settings":{"icon":"shopify:\/\/shop_images\/Fast_Delivery.png","title":"Fast Delivery","description":"For all orders $50 or more"}},"feature_nrnAyr":{"type":"feature","settings":{"icon":"shopify:\/\/shop_images\/Product_Warranty.png","title":"Product Warranty","description":"Your Satisfaction is Our Priority"}},"feature_4gT3QW":{"type":"feature","settings":{"icon":"shopify:\/\/shop_images\/Top-notch_support.png","title":"Top-notch Support","description":"24\/7 support for customers"}},"feature_iNDt8j":{"type":"feature","settings":{"icon":"shopify:\/\/shop_images\/Return_Refund.png","title":"Return & Refund","description":"Easy Returns & Refunds"}}},"block_order":["feature_7LrHhJ","feature_nrnAyr","feature_4gT3QW","feature_iNDt8j"],"name":"Shop Features","settings":{"show_features":true,"bg_color":"#f9f9f9","title_color":"#333333","title_size":18,"desc_color":"#666666","desc_size":16}}},"order":["image_banner_N3PtLz","animated_promo_grid_t93Tch","rich_text_qTd387","browse_by_categories_MfFMGB","image_banner","rich_text_RVP7RL","product_slider_B8VBwi","rich_text_gPEXdr","product_slider_BUmRQj","product_reviews_7BYYdG","image_banner_FwgKDC","newsletter_XBMcGU","rich_text_zY7PKr","product_slider_GwWGXk","shop_features_T6DkDz"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_N3PtLz": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_NXTbqP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Premium Terea Heets Hub Dubai",
+            "heading_size": "h1"
+          }
+        },
+        "text_fY4m8Y": {
+          "type": "text",
+          "settings": {
+            "text": "Your Trusted Destination for Authentic Terea Heets",
+            "text_style": "body"
+          }
+        },
+        "buttons_EnHppz": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NXTbqP",
+        "text_fY4m8Y",
+        "buttons_EnHppz"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/vape.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-right",
+        "desktop_content_alignment": "right",
+        "show_text_box": true,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "animated_promo_grid_t93Tch": {
+      "type": "animated-promo-grid",
+      "blocks": {
+        "promo_card_iebrRb": {
+          "type": "promo_card",
+          "settings": {
+            "image": "shopify://shop_images/C1.jpg",
+            "badge": "ONLY FOR TEREA",
+            "title": "TEREA KAZAKHSTAN",
+            "subtitle": "Experience premium quality",
+            "button_text": "Buy Now",
+            "button_style": "outline",
+            "link_type": "collection",
+            "product": "",
+            "collection": "iluma-i-one",
+            "page": "",
+            "custom_url": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "promo_card_xMikKi": {
+          "type": "promo_card",
+          "settings": {
+            "image": "shopify://shop_images/download_1_90e82b07-67b7-4fc6-ac74-b62fefb25a12.png",
+            "badge": "NEW",
+            "title": "TEREA INDONESIAN",
+            "subtitle": "Special edition flavors",
+            "button_text": "Shop Now",
+            "button_style": "filled",
+            "link_type": "collection",
+            "product": "",
+            "collection": "",
+            "page": "",
+            "custom_url": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "promo_card_AmiYFp": {
+          "type": "promo_card",
+          "settings": {
+            "image": "shopify://shop_images/download_1_90e82b07-67b7-4fc6-ac74-b62fefb25a12.png",
+            "badge": "NEW",
+            "title": "Collection Title",
+            "subtitle": "Short description or tagline for this collection",
+            "button_text": "Shop Now",
+            "button_style": "filled",
+            "link_type": "collection",
+            "product": "",
+            "collection": "",
+            "page": "",
+            "custom_url": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 40
+          }
+        }
+      },
+      "block_order": [
+        "promo_card_iebrRb",
+        "promo_card_xMikKi",
+        "promo_card_AmiYFp"
+      ],
+      "disabled": true,
+      "name": "Animated Promo Grid",
+      "settings": {
+        "heading": "",
+        "heading_size": 2.5,
+        "content_alignment": "left",
+        "background_color": "",
+        "background_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "grid_gap": 24,
+        "rounded_cards": true,
+        "rounded_buttons": true,
+        "overlay_opacity": 60,
+        "content_bg_opacity": 80,
+        "main_min_height": 500,
+        "small_min_height": 250,
+        "horizontal_min_height": 200,
+        "button_color": "#ffffff",
+        "button_text_color": "#000000",
+        "badge_color": "#ffffff",
+        "badge_text_color": "#000000"
+      }
+    },
+    "rich_text_qTd387": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6NxT3V": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>BROWSE BY CATEGORIES</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6NxT3V"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 32
+      }
+    },
+    "browse_by_categories_MfFMGB": {
+      "type": "browse-by-categories",
+      "blocks": {
+        "category_ayTaGP": {
+          "type": "category",
+          "name": "Cigarette",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_8.15.11_PM.jpg",
+            "category_title": "Cigarette",
+            "category_link": "shopify://collections/cigarette"
+          }
+        },
+        "category_pqpWcW": {
+          "type": "category",
+          "name": "Terea Indonesia",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.51.22_PM.jpg",
+            "category_title": "Terea Indonesia",
+            "category_link": "shopify://collections/terea-indonesia"
+          }
+        },
+        "category_haLj4B": {
+          "type": "category",
+          "name": "TEREA KAZAKHSTAN",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.50.46_PM.jpg",
+            "category_title": "TEREA KAZAKHSTAN",
+            "category_link": "shopify://collections/terea-kazakhstan-uzbekistan"
+          }
+        },
+        "category_MKRKmb": {
+          "type": "category",
+          "name": "TEREA ITALY",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.52.20_PM.jpg",
+            "category_title": "TEREA ITALY",
+            "category_link": "shopify://collections/terea-italy"
+          }
+        },
+        "category_z4NA7E": {
+          "type": "category",
+          "name": "Terea Swiss",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.52.39_PM.jpg",
+            "category_title": "Terea Swiss",
+            "category_link": "shopify://collections/terea-swiss"
+          }
+        },
+        "category_a9BPhj": {
+          "type": "category",
+          "name": "TEREA JAPAN",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.51.47_PM.jpg",
+            "category_title": "TEREA JAPAN",
+            "category_link": "shopify://collections/terea-japan"
+          }
+        },
+        "category_78GKqK": {
+          "type": "category",
+          "name": "IQOS ILUMA i Standard",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_6.13.20_AM.jpg",
+            "category_title": "IQOS ILUMA i Standard",
+            "category_link": "shopify://collections/iqos-iluma-standard"
+          }
+        },
+        "category_xGzPLP": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_6.35.46_AM.jpg",
+            "category_title": "IQOS ILUMA i ONE",
+            "category_link": "shopify://collections/iqos-iluma-one"
+          }
+        },
+        "category_jKeF3D": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_6.37.45_AM.jpg",
+            "category_title": "IQOS ILUMA i PRIME",
+            "category_link": "shopify://collections/iqos-iluma-i-prime"
+          }
+        },
+        "category_N6r3iT": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_12.56.00_PM_1.jpg",
+            "category_title": "RELX DEVICE",
+            "category_link": "shopify://collections/relx-devices"
+          }
+        },
+        "category_i7iYaa": {
+          "type": "category",
+          "name": "JUUL",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_5.39.58_AM.jpg",
+            "category_title": "Juul Pods & Device",
+            "category_link": "shopify://collections/juul-pods"
+          }
+        },
+        "category_HYrCdD": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/Nicotine_pods_b07b473d-ecd3-4d97-8c45-5cfe4bbfc48f.png",
+            "category_title": "Nicotine Pods",
+            "category_link": "shopify://collections/velo-nicotine-pouches"
+          }
+        },
+        "category_JPHQMr": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_12.56.29_PM.jpg",
+            "category_title": "Waka SoPro",
+            "category_link": "shopify://collections/waka-sopro-pa10000-puffs"
+          }
+        },
+        "category_YziRGh": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_7.50.09_PM.jpg",
+            "category_title": "MYLE",
+            "category_link": "shopify://collections/myle"
+          }
+        },
+        "category_AtMaGz": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_4.31.52_AM.jpg",
+            "category_title": "Relx single Pods",
+            "category_link": "shopify://collections/relx-pod-pro-2"
+          }
+        },
+        "category_C4frYG": {
+          "type": "category",
+          "settings": {
+            "category_image": "shopify://shop_images/WhatsApp_Image_2026-03-10_at_4.31.16_AM.jpg",
+            "category_title": "Relx double pods",
+            "category_link": "shopify://collections/relx-pod-pro"
+          }
+        }
+      },
+      "block_order": [
+        "category_ayTaGP",
+        "category_pqpWcW",
+        "category_haLj4B",
+        "category_MKRKmb",
+        "category_z4NA7E",
+        "category_a9BPhj",
+        "category_78GKqK",
+        "category_xGzPLP",
+        "category_jKeF3D",
+        "category_N6r3iT",
+        "category_i7iYaa",
+        "category_HYrCdD",
+        "category_JPHQMr",
+        "category_YziRGh",
+        "category_AtMaGz",
+        "category_C4frYG"
+      ],
+      "name": "Browse Categories",
+      "settings": {
+        "section_heading": "",
+        "heading_font_size": 32,
+        "heading_color": "#222222",
+        "heading_position": "center",
+        "box_font_size": 16,
+        "box_text_color": "#333333",
+        "box_hover_text_color": "#ffffff",
+        "box_bg_color": "#f1e9e9",
+        "box_hover_bg_color": "#152746",
+        "box_border_color": "#333333",
+        "box_border_width": 0,
+        "box_border_radius": 5
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/TEREA9.jpg",
+        "image_2": "shopify://shop_images/TEREA_2.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "small",
+        "image_behavior": "ambient",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_RVP7RL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LgHqxM": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>BEST OF THE WEEK</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LgHqxM"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "product_slider_B8VBwi": {
+      "type": "product-slider",
+      "custom_css": [
+        "section#product-slider-template--20055892623528__product_slider_B8VBwi {padding: 0; margin: 0;}"
+      ],
+      "name": "Product Slider",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "text_alignment": "left",
+        "title_font_size": 44,
+        "title_font_weight": 700,
+        "show_lines": true,
+        "line_color_before": "#000000",
+        "line_color_after": "#2563eb",
+        "line_width": 60,
+        "line_height": 4.5,
+        "collection": "juul-single-pods",
+        "product_limit": 24,
+        "slides_per_view": 4,
+        "spacing": 10,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_speed": 9000,
+        "show_arrows": true,
+        "show_dots": true,
+        "draggable": true,
+        "card_radius": 12,
+        "image_aspect_ratio": 1,
+        "show_hover_image": true,
+        "show_sale_badge": true,
+        "sale_badge_text": "Sale",
+        "show_new_badge": true,
+        "new_badge_text": "New",
+        "new_product_days": 7,
+        "show_vendor": true,
+        "show_rating": true,
+        "price_font_size": 20,
+        "show_add_to_cart": true,
+        "show_cart_icon": true,
+        "add_to_cart_text": "Add to Cart",
+        "show_quick_view": false,
+        "quick_view_text": "Quick View",
+        "button_font_size": 14,
+        "button_radius": 8,
+        "slider_bg_color": "#ffffff",
+        "card_bg_color": "#f8fafc",
+        "text_primary_color": "#1a1a1a",
+        "text_secondary_color": "#666666",
+        "accent_color": "#2563eb",
+        "border_color": "#e2e8f0",
+        "sale_color": "#eb2563",
+        "arrow_color": "#000000",
+        "dot_color": "#cbd5e1",
+        "dot_active_color": "#ffe400",
+        "button_bg_color": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_bg_color": "#334fb4",
+        "button_hover_text_color": "#ffffff"
+      }
+    },
+    "rich_text_gPEXdr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_faQRej": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>EDITOR’S PICKS</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_faQRej"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 52
+      }
+    },
+    "product_slider_BUmRQj": {
+      "type": "product-slider",
+      "custom_css": [
+        "#product-slider-template--20055892623528__product_slider_BUmRQj {padding: 0; margin: 0;}"
+      ],
+      "name": "Product Slider",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "text_alignment": "left",
+        "title_font_size": 44,
+        "title_font_weight": 700,
+        "show_lines": true,
+        "line_color_before": "#000000",
+        "line_color_after": "#2563eb",
+        "line_width": 60,
+        "line_height": 4.5,
+        "collection": "relx-pod-pro-2",
+        "product_limit": 24,
+        "slides_per_view": 4,
+        "spacing": 10,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_speed": 9000,
+        "show_arrows": true,
+        "show_dots": true,
+        "draggable": true,
+        "card_radius": 12,
+        "image_aspect_ratio": 1,
+        "show_hover_image": true,
+        "show_sale_badge": true,
+        "sale_badge_text": "Sale",
+        "show_new_badge": true,
+        "new_badge_text": "New",
+        "new_product_days": 7,
+        "show_vendor": true,
+        "show_rating": true,
+        "price_font_size": 20,
+        "show_add_to_cart": true,
+        "show_cart_icon": true,
+        "add_to_cart_text": "Add to Cart",
+        "show_quick_view": false,
+        "quick_view_text": "Quick View",
+        "button_font_size": 14,
+        "button_radius": 8,
+        "slider_bg_color": "#ffffff",
+        "card_bg_color": "#f8fafc",
+        "text_primary_color": "#1a1a1a",
+        "text_secondary_color": "#666666",
+        "accent_color": "#2563eb",
+        "border_color": "#e2e8f0",
+        "sale_color": "#eb2563",
+        "arrow_color": "#000000",
+        "dot_color": "#cbd5e1",
+        "dot_active_color": "#ffe400",
+        "button_bg_color": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_bg_color": "#334fb4",
+        "button_hover_text_color": "#ffffff"
+      }
+    },
+    "product_reviews_7BYYdG": {
+      "type": "product-reviews",
+      "blocks": {
+        "review_mX3VNh": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>Device has completely transformed my vaping experience. The performance is exceptional, delivering intense flavor and massive clouds with every puff. The customizable options allow me to fine-tune my settings to perfection.</p>",
+            "name": "— Alvin Johnson",
+            "location": "",
+            "avatar": "shopify://shop_images/download_13.png"
+          }
+        },
+        "review_Cpz48Y": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>Device has completely transformed my vaping experience. The performance is exceptional, delivering intense flavor and massive clouds with every puff. The customizable options allow me to fine-tune my settings to perfection.</p>",
+            "name": "— Alex Fudge",
+            "location": "",
+            "avatar": "shopify://shop_images/download_14.png"
+          }
+        },
+        "review_VgRd7n": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>I've tried many different vaping devices, but the smoke GPric18 has become my favorite. The flavor it produces is rich and intense, and the clouds it generates are dense and satisfying. The device is simple to use, making it perfect for vapers of all...</p>",
+            "name": "— Glenda Sandlin",
+            "location": "",
+            "avatar": "shopify://shop_images/download_15.png"
+          }
+        },
+        "review_8Bj74F": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "<p>This product exceeded my expectations! The quality is amazing and it arrived quickly. I would definitely recommend this to anyone looking for a reliable solution.</p>",
+            "name": "— Linda",
+            "location": "",
+            "avatar": "shopify://shop_images/download_16.png"
+          }
+        }
+      },
+      "block_order": [
+        "review_mX3VNh",
+        "review_Cpz48Y",
+        "review_VgRd7n",
+        "review_8Bj74F"
+      ],
+      "name": "Product Reviews",
+      "settings": {
+        "title": "Hear What Customers Are Saying",
+        "subtitle": "Product Reviews",
+        "layout": "slider",
+        "show_arrows": true,
+        "show_pagination": true,
+        "autoplay": true,
+        "autoplay_speed": 4000,
+        "slides_desktop": 3,
+        "slides_tablet": 2,
+        "slides_mobile": 1,
+        "show_avatar": true,
+        "title_font": "sans_serif_n4",
+        "text_font": "sans_serif_n4",
+        "background_color": "#f9f9f9",
+        "text_color": "#333333",
+        "subtitle_color": "#666666",
+        "card_background": "#ffffff",
+        "card_text_color": "#333333",
+        "star_color": "#ffd700",
+        "accent_color": "#4f46e5",
+        "show_button": false,
+        "button_text": "View All Reviews",
+        "button_link": ""
+      }
+    },
+    "image_banner_FwgKDC": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_PKDVdE": {
+          "type": "heading",
+          "settings": {
+            "heading": "The benefit vaping with smoking",
+            "heading_size": "h1"
+          }
+        },
+        "text_MEFKzB": {
+          "type": "text",
+          "settings": {
+            "text": "Vaping has gained significant popularity as a safer alternative to traditional smoke, it offers several benefits for individuals looking to make a switch. One of the primary advantages of vaping is the reduced exposure to harmful chemicals",
+            "text_style": "body"
+          }
+        },
+        "buttons_wGw4bJ": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PKDVdE",
+        "text_MEFKzB",
+        "buttons_wGw4bJ"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/vape_banner.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "medium",
+        "image_behavior": "ambient",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "newsletter_XBMcGU": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_RTVwQQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_B6tKYz": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "email_form_cF9VG9": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_RTVwQQ",
+        "paragraph_B6tKYz",
+        "email_form_cF9VG9"
+      ],
+      "disabled": true,
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_zY7PKr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gfTVFE": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Top Rated</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gfTVFE"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "product_slider_GwWGXk": {
+      "type": "product-slider",
+      "name": "Product Slider Pro",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "text_alignment": "center",
+        "title_font_size": 32,
+        "title_font_weight": 700,
+        "show_lines": true,
+        "line_color_before": "#2563eb",
+        "line_color_after": "#dc2626",
+        "line_width": 60,
+        "line_height": 2,
+        "collection": "iqos-iluma-prime",
+        "product_limit": 8,
+        "slides_per_view": 4,
+        "spacing": 20,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_speed": 4000,
+        "show_arrows": true,
+        "show_dots": true,
+        "draggable": true,
+        "card_radius": 12,
+        "image_aspect_ratio": 1,
+        "show_hover_image": true,
+        "show_sale_badge": true,
+        "sale_badge_text": "Sale",
+        "show_new_badge": true,
+        "new_badge_text": "New",
+        "new_product_days": 7,
+        "show_vendor": true,
+        "show_rating": true,
+        "price_font_size": 20,
+        "show_add_to_cart": true,
+        "show_cart_icon": true,
+        "add_to_cart_text": "Add to Cart",
+        "show_quick_view": false,
+        "quick_view_text": "Quick View",
+        "button_font_size": 14,
+        "button_radius": 8,
+        "slider_bg_color": "#ffffff",
+        "card_bg_color": "#f8fafc",
+        "text_primary_color": "#1a1a1a",
+        "text_secondary_color": "#666666",
+        "accent_color": "#2563eb",
+        "border_color": "#e2e8f0",
+        "sale_color": "#dc2626",
+        "arrow_color": "#1a1a1a",
+        "dot_color": "#cbd5e1",
+        "dot_active_color": "#2563eb",
+        "button_bg_color": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_bg_color": "#2563eb",
+        "button_hover_text_color": "#ffffff"
+      }
+    },
+    "shop_features_T6DkDz": {
+      "type": "shop-features",
+      "blocks": {
+        "feature_7LrHhJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Fast_Delivery.png",
+            "title": "Fast Delivery",
+            "description": "For all orders $50 or more"
+          }
+        },
+        "feature_nrnAyr": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Product_Warranty.png",
+            "title": "Product Warranty",
+            "description": "Your Satisfaction is Our Priority"
+          }
+        },
+        "feature_4gT3QW": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Top-notch_support.png",
+            "title": "Top-notch Support",
+            "description": "24/7 support for customers"
+          }
+        },
+        "feature_iNDt8j": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Return_Refund.png",
+            "title": "Return & Refund",
+            "description": "Easy Returns & Refunds"
+          }
+        }
+      },
+      "block_order": [
+        "feature_7LrHhJ",
+        "feature_nrnAyr",
+        "feature_4gT3QW",
+        "feature_iNDt8j"
+      ],
+      "name": "Shop Features",
+      "settings": {
+        "show_features": true,
+        "bg_color": "#f9f9f9",
+        "title_color": "#333333",
+        "title_size": 18,
+        "desc_color": "#666666",
+        "desc_size": 16
+      }
+    },
+    "featured_blog_latest": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Latest Blog",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner_N3PtLz",
+    "animated_promo_grid_t93Tch",
+    "rich_text_qTd387",
+    "browse_by_categories_MfFMGB",
+    "image_banner",
+    "rich_text_RVP7RL",
+    "product_slider_B8VBwi",
+    "rich_text_gPEXdr",
+    "product_slider_BUmRQj",
+    "product_reviews_7BYYdG",
+    "image_banner_FwgKDC",
+    "newsletter_XBMcGU",
+    "rich_text_zY7PKr",
+    "product_slider_GwWGXk",
+    "featured_blog_latest",
+    "shop_features_T6DkDz"
+  ]
+}
