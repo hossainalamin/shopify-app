@@ -18,9 +18,26 @@
 
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
+    {%- liquid
+      assign blog_display_title = blog.title
+      if blog.handle == 'news'
+        assign blog_display_title = 'TEREA Guide'
+      endif
+    -%}
+
+    <div class="main-blog__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      <p class="main-blog__eyebrow">Dubai IQOS & TEREA Insights</p>
+      <h1 class="title--primary main-blog__title">
+        {{ blog_display_title | escape }}
+      </h1>
+      <p class="main-blog__intro">
+        Read practical guides, flavor comparisons, and buying tips for adult IQOS ILUMA and TEREA users in Dubai and across the UAE.
+      </p>
+      <div class="main-blog__meta">
+        <span>{{ blog.articles_count }} guide{% if blog.articles_count != 1 %}s{% endif %}</span>
+        <span>Updated for adult customers 18+</span>
+      </div>
+    </div>
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
