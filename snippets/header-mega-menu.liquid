@@ -6,6 +6,15 @@
 {% endcomment %}
 
 <nav class="header__inline-menu">
+  {%- liquid
+    assign terea_guide_menu_exists = false
+    for link in section.settings.menu.links
+      assign link_title = link.title | downcase
+      if link.url contains '/pages/terea-guide' or link_title == 'terea guide'
+        assign terea_guide_menu_exists = true
+      endif
+    endfor
+  -%}
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
@@ -90,5 +99,25 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
+    {%- unless terea_guide_menu_exists -%}
+      <li>
+        <a
+          id="HeaderMenu-terea-guide"
+          href="/pages/terea-guide"
+          class="header__menu-item list-menu__item link link--text focus-inset"
+          {% if request.path contains '/pages/terea-guide' %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span
+            {%- if request.path contains '/pages/terea-guide' %}
+              class="header__active-menu-item"
+            {% endif %}
+          >
+            TEREA Guide
+          </span>
+        </a>
+      </li>
+    {%- endunless -%}
   </ul>
 </nav>

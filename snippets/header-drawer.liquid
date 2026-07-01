@@ -20,6 +20,15 @@
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
+            {%- liquid
+              assign terea_guide_menu_exists = false
+              for link in section.settings.menu.links
+                assign link_title = link.title | downcase
+                if link.url contains '/pages/terea-guide' or link_title == 'terea guide'
+                  assign terea_guide_menu_exists = true
+                endif
+              endfor
+            -%}
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
@@ -134,6 +143,20 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+              {%- unless terea_guide_menu_exists -%}
+                <li>
+                  <a
+                    id="HeaderDrawer-terea-guide"
+                    href="/pages/terea-guide"
+                    class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if request.path contains '/pages/terea-guide' %} menu-drawer__menu-item--active{% endif %}"
+                    {% if request.path contains '/pages/terea-guide' %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    TEREA Guide
+                  </a>
+                </li>
+              {%- endunless -%}
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">
